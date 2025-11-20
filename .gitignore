@@ -3,6 +3,12 @@
 # dependencies
 /node_modules
 package-lock.json
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
 
 # next.js
 /.next/
@@ -10,6 +16,10 @@ package-lock.json
 
 # production
 /build
+
+# misc
+.DS_Store
+*.pem
 
 # debug
 npm-debug.log*
@@ -26,3 +36,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# OpenNext
+/.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
