@@ -9,19 +9,19 @@ export function generateMetadata(): Metadata {
     const lang = "az";
     const url = ARTICLES_002_SS_METALANG[lang] as string;
 
-    const title = "Rəqəm sistemləri — ümumi baxış, tarix və növlər";
+    const title = "Say sistemləri — ümumi baxış, tarix və növlər";
     const description =
-        "Rəqəm sistemləri haqqında ətraflı məqalə: onların tarixi, əsas növləri və rəqəmlərin mədəniyyətdə, riyaziyyatda və kompüter texnologiyalarında ifadəsi.";
+        "Say sistemləri haqqında ətraflı məqalə: onların tarixi, əsas növləri və ədədlərin mədəniyyətdə, riyaziyyatda və kompüter texnologiyalarında ifadəsi.";
     const keywords = [
-        "rəqəm sistemi",
         "say sistemi",
+        "mövqeli say sistemi",
         "hind-ərəb rəqəmləri",
         "rəqəmlərin tarixi",
         "onluq sistem",
-        "roman rəqəmləri",
+        "roma rəqəmləri",
         "maya rəqəmləri",
         "riyaziyyat",
-        "rəqəmlərin yazılışı",
+        "ədədlərin yazılışı",
     ].join(", ");
 
     return SEO({ title, description, url, keywords, alterLangs: ARTICLES_002_SS_METALANG, lang, pageType: "article" });
@@ -33,18 +33,18 @@ const NumeralSystem = () => {
             <article className="flex-1 text-justify">
                 <Container className="prose prose-lg">
                     <header>
-                        <h1>Say sisteması</h1>
+                        <h1>Say sistemi</h1>
                     </header>
                     <section>
-                        <h2 className="hidden">Say sisteması</h2>
+                        <h2 className="hidden">Say sistemi</h2>
                         <p>
-                            Say sisteması — ədədləri yazılı formada ifadə etmə üsulu, yəni müəyyən bir ədədlər çoxluğunu rəqəmlər və ya simvollar vasitəsilə
+                            Say sistemi — ədədləri yazılı formada ifadə etmə üsulu, yəni müəyyən bir ədədlər çoxluğunu rəqəmlər və ya simvollar vasitəsilə
                             ardıcıl və nizamlı şəkildə göstərən riyazi yazı sistemidir.
                         </p>
                         <p>
                             Eyni simvollar ardıcıllığı müxtəlif say sistemlərində müxtəlif mənalar daşıya bilər. Məsələn,{" "}
                             <code className="[font-family:'Times_New_Roman',serif] px-1 py-0.5 rounded">"11"</code> onluq say sistemində (bu gün dünyada ən
-                            geniş yayılmışı) on biri bildirir, ikilik say sistemində (müasir kompüterlərdə istifadə olunur) üçü göstərir, birdənlik say
+                            geniş yayılmışı) on biri bildirir, ikilik say sistemində (müasir kompüterlərdə istifadə olunur) üçü göstərir, birli say
                             sistemində isə (say-çubuq üsulunda) ikiyə uyğundur.
                         </p>
                         <p>
@@ -72,7 +72,7 @@ const NumeralSystem = () => {
                         <h2>Tarix</h2>
                         <p>
                             Alimlərin fikrincə, ilk say sistemləri sivilizasiyalara görə müxtəlif olmuşdur: Babililər 60-lıq sistemi istifadə etmiş, misirlilər
-                            heroqlif rəqəmlərini yaratmış, çinlilər çubuq rəqəmlərindən istifadə etmişdir. Mayalar isə müstəqil olaraq 20-lik (vigesimal)
+                            heroqlif rəqəmlərini yaratmış, çinlilər çubuq rəqəmlərindən istifadə etmişdir. Mayalar isə müstəqil olaraq iyirmilik (vigesimal)
                             sistemi yaratmış və sıfır üçün xüsusi bir işarə daxil etmişlər.
                         </p>
                         <Image
@@ -129,8 +129,8 @@ const NumeralSystem = () => {
                         />
                         <p>
                             <strong>Maya rəqəmlərinin</strong> dəqiq yaşı məlum deyil, lakin onların Hind–Ərəb sistemindən daha qədim olması mümkündür. Sistem{" "}
-                            <em>vigesimal</em> (20-lik) idi və iyirmi rəqəmdən ibarət idi. Mayyalar sıfırı göstərmək üçün ilbiz qabığı simvolundan istifadə
-                            edirdilər. Rəqəmlər şaquli yazılır, birliklər yuxarıdan aşağıya ən altda yerləşirdi. Mayyaların müasir onluq vergülə bənzər işarəsi
+                            <em>vigesimal</em> (iyirmilik) idi və iyirmi rəqəmdən ibarət idi. Mayalar sıfırı göstərmək üçün ilbiz qabığı simvolundan istifadə
+                            edirdilər. Rəqəmlər şaquli yazılır, təkliklər yuxarıdan aşağıya ən altda yerləşirdi. Mayaların müasir onluq vergülə bənzər işarəsi
                             olmadığından, sistem kəsrləri ifadə edə bilmirdi.
                         </p>
                         <p>
@@ -172,7 +172,7 @@ const NumeralSystem = () => {
                             Ən çox istifadə olunan say sistemi onluq (decimal) sistemdir. Onun tam ədəd versiyasının inkişafında hind riyaziyyatçıları, xüsusilə{" "}
                             <strong>hind–ərəb rəqəmləri sistemi</strong> mühüm rol oynamışdır.
                             <sup className="text-gray-400">[8]</sup> V əsrdə Kusumapuradan <strong>Aryabhata</strong>
-                            mövqe–dəyər yazısını işləyib hazırladı, bir əsr sonra isə <strong>Brahmagupta</strong> sıfır simvolunu təqdim etdi. Sistem tədricən
+                            mövqe–qiymət yazısını işləyib hazırladı, bir əsr sonra isə <strong>Brahmagupta</strong> sıfır simvolunu təqdim etdi. Sistem tədricən
                             Hindistanla ticarət və hərbi əlaqələr vasitəsilə Ərəbistana yayıldı. Yaxın Şərq riyaziyyatçıları sistemi genişləndirərək 10-un mənfi
                             qüvvətlərini (kəsrləri) əlavə etdilər. Bu, 952–953-cü illərdə suriyalı riyaziyyatçı <strong>Əbu’l-Həsən əl-Uqlidisi</strong>nin
                             traktatında qeyd olunmuşdur.
@@ -186,33 +186,33 @@ const NumeralSystem = () => {
                             sıxılmasında istifadə edilən Elias gamma kodlaşdırması unary sistemdən yararlanır.
                         </p>
                         <p>
-                            Birli yazı yeni dəyərlər üçün simvollar əlavə edilməklə qısaldıla bilər. Çox vaxt bu dəyərlər 10-un qüvvətləri olur. Məsələn, / — 1,
-                            − — 10, + — 100 götürülərsə, 304 rəqəmi +++ ////, 123 isə + − − /// şəklində yazılar. Bu üsul <em>işarə–dəyər yazısı</em> adlanır.
+                            Birli yazı yeni qiymətlər üçün simvollar əlavə edilməklə qısaldıla bilər. Çox vaxt bu qiymətlər 10-un qüvvətləri olur. Məsələn, / — 1,
+                            − — 10, + — 100 götürülərsə, 304 ədədi +++ ////, 123 ədədi isə + − − /// şəklində yazılar. Bu üsul <em>işarə–qiymət yazısı</em> adlanır.
                             Qədim Misir say sistemi bu tipdə olmuş, Roma rəqəmləri isə onun dəyişdirilmiş formasıdır.
                         </p>
                         <p>
                             Daha əlverişli olanı — simvolların təkrarını xüsusi qısaltmalarla ifadə edən sistemlərdir. Məsələn, əlifbanın ilk doqquz hərfini
-                            götürsək, A — “bir dəfə”, B — “iki dəfə” mənasını versə, 304 rəqəmi C+ D/ kimi yazıla bilər. Belə sistem Çin rəqəmlərində və Şərqi
+                            götürsək, A — “bir dəfə”, B — “iki dəfə” mənasını versə, 304 ədədi C+ D/ kimi yazıla bilər. Belə sistem Çin rəqəmlərində və Şərqi
                             Asiya ölkələrinin rəqəmlərində istifadə olunur. İngilis dilindəki say sistemi də bu tipdir (“three hundred four”). Bir çox dillərdə
                             isə qarışıq əsaslardan istifadə edilir: məsələn, fransızcada 79 — <em>soixante dix-neuf</em> (60 + 10 + 9).
                         </p>
                         <p>
-                            Ən mükəmməl sistem mövqe–dəyər (pozisional) sistemdir. Bu sistemlər əsaslarına görə təsnif olunur. Onluq sistemdə 0–9 arası on rəqəm
+                            Ən mükəmməl sistem mövqe–qiymət (mövqeli) sistemdir. Bu sistemlər əsaslarına görə təsnif olunur. Onluq sistemdə 0–9 arası on rəqəm
                             var və rəqəmin mövqeyi onun hansı 10 qüvvəti ilə vurulacağını göstərir: 304 = 3×100 + 0×10 + 4×1, yəni 3×10² + 0×10¹ + 4×10⁰. Burada
                             sıfır vacib rol oynayır, çünki o, mövqeləri “ötməyə” imkan verir.
                         </p>
                         <p>
-                            Aritmetik əməliyyatlar mövqe–dəyər sistemində daha asandır. Toplama sistemlərində hər bir qüvvət üçün ayrıca simvol lazım olsa da,
-                            pozisional sistemdə (onluq əsasta) cəmi on simvol kifayətdir.
+                            Aritmetik əməliyyatlar mövqe–qiymət sistemində daha asandır. Toplama sistemlərində hər bir qüvvət üçün ayrıca simvol lazım olsa da,
+                            mövqeli sistemdə (onluq əsasta) cəmi on simvol kifayətdir.
                             <sup className="text-gray-400">[10]</sup>
                         </p>
                         <p>
-                            Hazırda yazıda universal olaraq onluq mövqe–dəyər sistemi istifadə olunur. Həmçinin bəzi hallarda 1000 əsası da tətbiq edilir:
+                            Hazırda yazıda universal olaraq onluq mövqe–qiymət sistemi istifadə olunur. Həmçinin bəzi hallarda 1000 əsası da tətbiq edilir:
                             məsələn, 1,000,234,567.
                         </p>
                         <p>
-                            Kompüterlərdə əsas sistem 2 əsasa malik mövqe–dəyər sistemidir (binary). Burada yalnız iki rəqəm — 0 və 1 istifadə olunur. Binar
-                            sistem üçlü qruplara bölünəndə 8 əsası (oktal), dördlü qruplara bölünəndə 16 əsası (hexadecimal) alınır. Çox böyük tam ədədlər üçün
+                            Kompüterlərdə əsas sistem 2 əsasa malik mövqe–qiymət sistemidir (ikilik). Burada yalnız iki rəqəm — 0 və 1 istifadə olunur. İkilik
+                            sistem üçlü qruplara bölünəndə 8 əsası (səkkizlik), dördlü qruplara bölünəndə 16 əsası (onaltılıq) alınır. Çox böyük tam ədədlər üçün
                             isə 2³² və ya 2⁶⁴ əsası tətbiq olunur.
                         </p>
                         <p>
@@ -220,7 +220,7 @@ const NumeralSystem = () => {
                             kodlaşdırma işlədilir. Quş beynindəki <strong>HVC</strong> mərkəzi həm öyrənmədə, həm də oxumada iştirak edir.
                         </p>
                         <p>
-                            Rəqəmlər iki növə bölünür: arifmetik (0–9) və həndəsi (1, 10, 100...). İşarə–dəyər sistemləri həndəsi rəqəmlərdən, mövqe–dəyər
+                            Rəqəmlər iki növə bölünür: arifmetik (0–9) və həndəsi (1, 10, 100...). İşarə–qiymət sistemləri həndəsi rəqəmlərdən, mövqe–qiymət
                             sistemləri isə arifmetik rəqəmlərdən istifadə edir. Lakin danışıq dilində hər ikisi də işlədilir.
                         </p>
                         <p>
@@ -231,11 +231,11 @@ const NumeralSystem = () => {
                     </section>
 
                     <section>
-                        <h2>Pozisional sistemlərin təfərrüatları</h2>
+                        <h2>Mövqeli sistemlərin təfərrüatları</h2>
                         <p>
-                            Bir pozisional <em>b</em> əsaslı say sistemi (<em>b</em> — 1-dən böyük natural ədəd, sistemin əsası və ya radiksi) sıfır daxil
+                            Bir mövqeli <em>b</em> əsaslı say sistemi (<em>b</em> — 1-dən böyük natural ədəd, sistemin əsası və ya radiksi) sıfır daxil
                             olmaqla ilk <em>b</em> natural ədədə uyğun <em>b</em> əsas simvoldan (rəqəmdən) istifadə edir. Qalan ədədlər isə simvolların
-                            mövqeyinə görə yaradılır: ən sağdakı rəqəm öz dəyərinə bərabərdir, sola keçdikcə dəyəri <em>b</em>-ə vurulur.
+                            mövqeyinə görə yaradılır: ən sağdakı rəqəm öz qiymətinə bərabərdir, sola keçdikcə qiyməti <em>b</em>-ə vurulur.
                         </p>
                         <p>
                             Məsələn, <strong>onluq</strong> sistemdə (əsas 10) 4327 ədədi belə yazılır: (4×10³) + (3×10²) + (2×10¹) + (7×10⁰), burada 10⁰ = 1.
@@ -270,7 +270,7 @@ const NumeralSystem = () => {
                             mövqe ədədin <strong>böyüklük dərəcəsinə</strong> yaxındır.
                         </p>
                         <p>
-                            Birlik sistemində (unary) çəkini göstərmək üçün <em>w</em> işarə lazım olardı. Pozisional sistemdə isə cəmi
+                            Birli sistemində (unary) çəkini göstərmək üçün <em>w</em> işarə lazım olardı. Mövqeli sistemdə isə cəmi
                             <Image src="/images/formula_n3.png" className="dark:bg-slate-400 rounded-sm inline" alt="f3" width={131} height={19} />
                             rəqəm kifayətdir (<em>k ≥ 0</em> üçün). Məsələn, 1000 çəkisini göstərmək üçün 4 rəqəm lazımdır, çünki
                             <code className="[font-family:'Times_New_Roman',serif] px-1">

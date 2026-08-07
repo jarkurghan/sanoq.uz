@@ -5,7 +5,6 @@ import { SUPERSCRIPTMINUS } from "@/lib/constants/exponent";
 import { SUPERSCRIPTS } from "@/lib/constants/exponent";
 import { SUBSCRIPTS } from "@/lib/constants";
 import { SolutionContentProps } from "./solution";
-import { getTranslation } from "@/lib/translater/i18n";
 import { InlineMath } from "react-katex";
 import Spinner from "../global/spinner";
 
@@ -30,14 +29,13 @@ export default function SolutionContentEN(props: SolutionContentProps) {
     const { isHiddenWholePart, isHiddenFractionalPart } = props;
     const { decWholePart, decFractionalPart } = props;
     const { toWholePart, toFractionalPart } = props;
-    const { lang } = props;
 
-    const t = getTranslation(lang);
     const exact = !isFractional || (decFractionalPart.exact && toFractionalPart.exact);
     const displayWhole = inputWholePart || "0";
-    const fromName = t("calculator.info.title." + fromBase).toLowerCase();
-    const toName = t("calculator.info.title." + toBase).toLowerCase();
-    const decimalName = t("calculator.info.title.10").toLowerCase();
+    // Textbook phrasing: conversion between bases / numeral systems with a given radix
+    const fromName = `the base-${fromBase} numeral system`;
+    const toName = `the base-${toBase} numeral system`;
+    const decimalName = "the decimal (base-10) numeral system";
     const needsTwoSteps = !isHiddenStep1 && !isHiddenStep2;
 
     return (
@@ -50,7 +48,7 @@ export default function SolutionContentEN(props: SolutionContentProps) {
                 !isHidden && (
                     <div className="mx-auto pt-10 leading-relaxed">
                         <h2 className="text-xl font-bold mt-6 mb-4">
-                            Convert{" "}
+                            Convert the number{" "}
                             <code className="bg-card text-card-foreground px-1 rounded mx-1">
                                 {isNegative && "−"}
                                 {displayWhole}
@@ -63,7 +61,8 @@ export default function SolutionContentEN(props: SolutionContentProps) {
 
                         {needsTwoSteps && (
                             <p className="mb-4 text-muted-foreground">
-                                Instead of converting directly, we first go to {decimalName}, then to the target system. This works for any pair of bases.
+                                Instead of converting directly, we first convert to {decimalName}, then to the target system. This method works for any pair of
+                                bases.
                             </p>
                         )}
 

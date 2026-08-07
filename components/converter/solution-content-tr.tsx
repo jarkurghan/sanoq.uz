@@ -302,18 +302,18 @@ export default function SolutionContentTR(props: SolutionContentProps) {
                                                 );
                                             })}
                                             {toFractionalPart.period.isPeriod !== false && (
-                                                <span className="block font-bold p-1 text-muted-foreground">… dönem yinelenir</span>
+                                                <span className="block font-bold p-1 text-muted-foreground">… periyot yinelenir</span>
                                             )}
                                         </pre>
                                         <p className="font-medium mt-2">
                                             {toFractionalPart.period.isPeriod === true && (
                                                 <span className="block mb-1">
-                                                    Bu süreç periyodiktir: dönem uzunluğu {toFractionalPart.period.length}
+                                                    Bu süreç devirlidir: periyot uzunluğu {toFractionalPart.period.length}
                                                     {toFractionalPart.value.includes("(") ? " (parantez içinde)" : ""}.
                                                 </span>
                                             )}
                                             {toFractionalPart.period.isPeriod === null && (
-                                                <span className="block mb-1">Dönem çok uzun — yaklaşık değer gösteriliyor.</span>
+                                                <span className="block mb-1">Periyot çok uzun — yaklaşık değer gösteriliyor.</span>
                                             )}
                                             <code className="block bg-card text-card-foreground px-1 rounded">
                                                 0{decFractionalPart.value}

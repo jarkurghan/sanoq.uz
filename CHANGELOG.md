@@ -2,6 +2,21 @@
 
 Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
+### v1.4.1 — 2026-08-07
+**Tuzatildi:**
+- Tojik tili tarjimasidagi xatolar tuzatildi
+- Qozoq tili tarjimasidagi xatolar tuzatildi
+- Qirg‘iz tili tarjimasidagi xatolar tuzatildi
+- Uyg'ur tili tarjimasidagi xatolar tuzatildi
+- Rus tili tarjimasidagi xatolar tuzatildi
+- Ingliz tili tarjimasidagi xatolar tuzatildi
+- Arab tili tarjimasidagi xatolar tuzatildi
+- Turkman tili tarjimasidagi xatolar tuzatildi
+- Turk tili tarjimasidagi xatolar tuzatildi
+- Ozarbayjon tili tarjimasidagi xatolar tuzatildi
+- Tatar tili tarjimasidagi xatolar tuzatildi
+- Boshqird tili tarjimasidagi xatolar tuzatildi
+
 ### v1.4.0 — 2026-08-07
 
 **Tuzatildi:**

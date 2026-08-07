@@ -7,7 +7,7 @@ export function generateMetadata(): Metadata {
     const url = ARTICLES_001_PVNSS_METALANG["tr"] as string;
     const title = "Konumsal ve konumsal olmayan sayı sistemleri";
     const description = "Bu makale sayı sistemi kavramını basit ve uygulamalı örneklerle açıklar.";
-    const keywords = ["sayı sistemi", "konumsal sayı sistemi", "konumsal olmayan sayı sistemi", "Romen rakamları", "sayı sistemleri farkı"];
+    const keywords = ["sayı sistemi", "konumsal sayı sistemi", "konumsal olmayan sayı sistemi", "Roma rakamları", "sayı sistemleri farkı"];
 
     return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG, lang: "tr", pageType: "article" });
 }
@@ -18,7 +18,7 @@ export default function MakaleKonumsalNokonumsal() {
             <article className="flex-1 text-justify">
                 <Container className="prose prose-lg">
                     <header>
-                        <h1>Konumsal (pozisyonel) ve konumsal olmayan sayı sistemleri</h1>
+                        <h1>Konumsal ve konumsal olmayan sayı sistemleri</h1>
                         <p>
                             Bu makale sayı sistemleri kavramını basit ve uygulamalı örneklerle açıklar. Odak noktamız iki ana kategori olacaktır:
                             <strong> konumsal</strong> (rakamın değeri bulunduğu <em>konuma</em> bağlı) ve <strong>konumsal olmayan</strong> (rakamın değeri
@@ -30,7 +30,7 @@ export default function MakaleKonumsalNokonumsal() {
                         <h2>Sayı sistemi nedir?</h2>
                         <p>
                             Sayı sistemi, <em>sayıları işaretleme ve yazma kuralları</em> bütünüdür. Her sistemin bir <strong>tabanı</strong> ve bir
-                            <strong> rakamlar kümesi</strong> vardır. Örneğin ondalık sistemde taban 10’dur ve rakamlar kümesi 0–9’dan oluşur.
+                            <strong> rakamlar kümesi</strong> vardır. Örneğin onluk sistemde taban 10’dur ve rakamlar kümesi 0–9’dan oluşur.
                         </p>
                     </section>
 
@@ -51,8 +51,8 @@ export default function MakaleKonumsalNokonumsal() {
                                 önemi yoktur.
                             </li>
                             <li>
-                                <strong>Romen rakamları:</strong> <code>I=1</code>, <code>V=5</code>, <code>X=10</code>, <code>L=50</code>, <code>C=100</code>,
-                                <code> D=500</code>, <code>M=1000</code>. Sayılar çoğunlukla toplama (bazen <em>subtraktif</em> çıkarma) kurallarıyla
+                                <strong>Roma rakamları:</strong> <code>I=1</code>, <code>V=5</code>, <code>X=10</code>, <code>L=50</code>, <code>C=100</code>,
+                                <code> D=500</code>, <code>M=1000</code>. Sayılar çoğunlukla toplama (bazen <em>çıkarma</em>) kurallarıyla
                                 oluşturulur. Örneğin <code>VIII = 5+3 = 8</code>, <code>IX = 10−1 = 9</code>, <code>XL = 50−10 = 40</code>.
                             </li>
                             <li>
@@ -75,7 +75,7 @@ export default function MakaleKonumsalNokonumsal() {
                             <code>{`(a_n a_{n-1} ... a_1 a_0)_b = a_n*b^n + a_{n-1}*b^{n-1} + ... + a_1*b + a_0\nŞart: 0 \u2264 a_i < b`}</code>
                         </pre>
                         <p>
-                            Burada <strong>b</strong> sistemin tabanıdır; örneğin ondalıkta <strong>b=10</strong>, ikilikte <strong>b=2</strong>, onaltılıkta{" "}
+                            Burada <strong>b</strong> sistemin tabanıdır; örneğin onlukta <strong>b=10</strong>, ikilikte <strong>b=2</strong>, onaltılıkta{" "}
                             <strong>b=16</strong>. <strong>0</strong> rakamı konumsal sistemlerde kritiktir: yer tutucu ve “yok” değeri gösteren bir sembol
                             olarak kullanılır.
                         </p>
@@ -83,7 +83,7 @@ export default function MakaleKonumsalNokonumsal() {
                         <strong>Yaygın konumsal sistemler</strong>
                         <ul>
                             <li>
-                                <strong>Ondalık (b=10):</strong> günlük yaşam, finans ve ölçümlerde standart.
+                                <strong>Onluk (b=10):</strong> günlük yaşam, finans ve ölçümlerde standart.
                             </li>
                             <li>
                                 <strong>İkilik (b=2):</strong> bilgisayarların mantığı (0/1) ve sayısal elektroniğin temeli.
@@ -120,7 +120,7 @@ export default function MakaleKonumsalNokonumsal() {
                                 <strong>Toplamsal yapı:</strong> Rakamlar üst üste eklenir; çarpma, yinelemeli toplamaya dönüşür ve yazım karmaşıklaşır.
                             </li>
                             <li>
-                                <strong>Subtraktif kurallar:</strong> Romen rakamlarındaki <code>IV</code>, <code>IX</code> gibi durumlar algoritmaları
+                                <strong>Çıkarma kuralları:</strong> Roma rakamlarındaki <code>IV</code>, <code>IX</code> gibi durumlar algoritmaları
                                 basitleştirmez.
                             </li>
                             <li>
@@ -169,16 +169,16 @@ export default function MakaleKonumsalNokonumsal() {
                         <p>Bazı örneklerle görelim:</p>
                         <ul>
                             <li>
-                                <strong>Romen → ondalık:</strong> MCMLXXXIV = 1000 + (1000−100) + 50 + 10 + 10 + 10 + (5−1) = 1984.
+                                <strong>Roma → onluk:</strong> MCMLXXXIV = 1000 + (1000−100) + 50 + 10 + 10 + 10 + (5−1) = 1984.
                             </li>
                             <li>
-                                <strong>İkilik → ondalık:</strong> 1100101<sub>2</sub> = 64 + 32 + 4 + 1 = 101<sub>10</sub>.
+                                <strong>İkilik → onluk:</strong> 1100101<sub>2</sub> = 64 + 32 + 4 + 1 = 101<sub>10</sub>.
                             </li>
                             <li>
-                                <strong>Ondalık → onaltılık:</strong> 255<sub>10</sub> → (FF)<sub>16</sub>.
+                                <strong>Onluk → onaltılık:</strong> 255<sub>10</sub> → (FF)<sub>16</sub>.
                             </li>
                             <li>
-                                <strong>Ondalık → ikilik (kesir):</strong> 0.1<sub>10</sub> ≈ 0.0001100110011…<sub>2</sub> (devirli).
+                                <strong>Onluk → ikilik (kesir):</strong> 0.1<sub>10</sub> ≈ 0.0001100110011…<sub>2</sub> (devreden).
                             </li>
                         </ul>
                     </section>
@@ -193,7 +193,7 @@ export default function MakaleKonumsalNokonumsal() {
                                 <strong>Kesir dönüşümünü erken kesmek:</strong> hatayı kontrol etmek için adım sayısı ve hassasiyet önceden belirlenmelidir.
                             </li>
                             <li>
-                                <strong>Romen rakamlarında subtraksiyonu yanlış uygulamak:</strong> <b>IL</b> (49) standartlara göre doğru değildir; doğrusu
+                                <strong>Roma rakamlarında çıkarma kuralını yanlış uygulamak:</strong> <b>IL</b> (49) standartlara göre doğru değildir; doğrusu
                                 <b> XLIX</b>’tir.
                             </li>
                         </ul>

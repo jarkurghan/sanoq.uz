@@ -73,7 +73,7 @@ export default function MaqolaPozitsionNopozitsion_AR() {
                         </pre>
                         <p>
                             حيث <strong>b</strong> هو <strong>أساس النظام</strong>؛ مثلًا: في العشري <strong>b=10</strong>، في الثنائي <strong>b=2</strong>، في
-                            الست عشري <strong>b=16</strong>. والرقم <strong>0</strong> عنصر جوهري في الأنظمة الموضعية: يُستخدم رقمًا مكمّلًا ودالًّا على غياب
+                            السداسي عشر <strong>b=16</strong>. والرقم <strong>0</strong> عنصر جوهري في الأنظمة الموضعية: يُستخدم رقمًا مكمّلًا ودالًّا على غياب
                             القيمة.
                         </p>
 
@@ -86,10 +86,10 @@ export default function MaqolaPozitsionNopozitsion_AR() {
                                 <strong>الثنائي (b=2):</strong> أساس منطق الحواسيب (0/1) والإلكترونيات الرقمية.
                             </li>
                             <li>
-                                <strong>الثماني (b=8) والست عشري (b=16):</strong> لتمثيل مجموعات البِتّات بصورة مُكثّفة ومناسبة للبرمجة.
+                                <strong>الثماني (b=8) والسداسي عشر (b=16):</strong> لتمثيل مجموعات البِتّات بصورة مُكثّفة ومناسبة للبرمجة.
                             </li>
                             <li>
-                                <strong>الخمسي (b=5) والسداسي (b=6) والعشريني (b=20) والستيني (b=60):</strong> تظهر في سياقات ثقافية وتاريخية مختلفة (مثل نظام
+                                <strong>الخماسي (b=5) والسداسي (b=6) والعشريني (b=20) والستيني (b=60):</strong> تظهر في سياقات ثقافية وتاريخية مختلفة (مثل نظام
                                 الوقت والزوايا الستيني).
                             </li>
                         </ul>
@@ -173,7 +173,7 @@ export default function MaqolaPozitsionNopozitsion_AR() {
                                 <strong>ثنائي → عشري:</strong> 1100101<sub>2</sub> = 64 + 32 + 4 + 1 = 101<sub>10</sub>.
                             </li>
                             <li>
-                                <strong>عشري → ست عشري:</strong> 255<sub>10</sub> → (FF)<sub>16</sub>.
+                                <strong>عشري → سداسي عشر:</strong> 255<sub>10</sub> → (FF)<sub>16</sub>.
                             </li>
                             <li>
                                 <strong>عشري → ثنائي (كسر):</strong> 0.1<sub>10</sub> ≈ 0.0001100110011…<sub>2</sub> (دوري).

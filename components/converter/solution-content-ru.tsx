@@ -5,7 +5,6 @@ import { SUPERSCRIPTMINUS } from "@/lib/constants/exponent";
 import { SUPERSCRIPTS } from "@/lib/constants/exponent";
 import { SUBSCRIPTS } from "@/lib/constants";
 import { SolutionContentProps } from "./solution";
-import { getTranslation } from "@/lib/translater/i18n";
 import { InlineMath } from "react-katex";
 import Spinner from "../global/spinner";
 
@@ -30,14 +29,14 @@ export default function SolutionContentRU(props: SolutionContentProps) {
     const { isHiddenWholePart, isHiddenFractionalPart } = props;
     const { decWholePart, decFractionalPart } = props;
     const { toWholePart, toFractionalPart } = props;
-    const { lang } = props;
 
-    const t = getTranslation(lang);
     const exact = !isFractional || (decFractionalPart.exact && toFractionalPart.exact);
     const displayWhole = inputWholePart || "0";
-    const fromName = t("calculator.info.title." + fromBase).toLowerCase();
-    const toName = t("calculator.info.title." + toBase).toLowerCase();
-    const decimalName = t("calculator.info.title.10").toLowerCase();
+    // Textbook phrasing («система счисления с основанием q») with correct case after «из» / «в»
+    const fromGen = `системы счисления с основанием ${fromBase}`;
+    const toAcc = `систему счисления с основанием ${toBase}`;
+    const decimalGen = "десятичной системы счисления";
+    const decimalAcc = "десятичную систему счисления";
     const needsTwoSteps = !isHiddenStep1 && !isHiddenStep2;
 
     return (
@@ -50,7 +49,7 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                 !isHidden && (
                     <div className="mx-auto pt-10 leading-relaxed">
                         <h2 className="text-xl font-bold mt-6 mb-4">
-                            Перевод{" "}
+                            Перевод числа{" "}
                             <code className="bg-card text-card-foreground px-1 rounded mx-1">
                                 {isNegative && "−"}
                                 {displayWhole}
@@ -58,13 +57,13 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                 {inputFractionalPart}
                                 {SUBSCRIPTS[fromBase]}
                             </code>{" "}
-                            из {fromName} в {toName}
+                            из {fromGen} в {toAcc}
                         </h2>
 
                         {needsTwoSteps && (
                             <p className="mb-4 text-muted-foreground">
-                                Вместо прямого перевода сначала переходим в {decimalName}, затем — в целевую систему. Этот способ работает для любой пары
-                                оснований.
+                                Вместо прямого перевода сначала переводим число в {decimalAcc}, затем — в целевую систему. Этот способ работает для любой
+                                пары оснований.
                             </p>
                         )}
 
@@ -95,7 +94,7 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                 <p className="mb-4">
                                     <strong>
                                         {needsTwoSteps && "Шаг 1: "}
-                                        Переводим из {fromName} в {decimalName}
+                                        Переводим из {fromGen} в {decimalAcc}
                                     </strong>
                                 </p>
                                 <p className="mb-4 text-sm text-muted-foreground">
@@ -225,7 +224,7 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                 <p className="mb-4 mt-8">
                                     <strong>
                                         {needsTwoSteps && "Шаг 2: "}
-                                        Переводим из {decimalName} в {toName}
+                                        Переводим из {decimalGen} в {toAcc}
                                     </strong>
                                 </p>
 

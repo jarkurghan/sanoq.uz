@@ -5,23 +5,23 @@ import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
     const url = ARTICLES_001_PVNSS_METALANG["az"] as string;
-    const title = "Pozisional və qeyri-pozisional say sistemləri";
+    const title = "Mövqeli və mövqesiz say sistemləri";
     const description = "Bu məqalə say sistemləri anlayışını sadə və praktik nümunələrlə izah edir.";
-    const keywords = ["say sistemi", "pozisional say sistemi", "qeyri-pozisional say sistemi", "Rim rəqəmləri", "say sistemlərinin fərqi"];
+    const keywords = ["say sistemi", "mövqeli say sistemi", "mövqesiz say sistemi", "Roma rəqəmləri", "say sistemlərinin fərqi"];
 
     return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG, lang: "az", pageType: "article" });
 }
 
-export default function MeqalePozisionalQeyriPozisional() {
+export default function MeqaleMovqeliMovqesiz() {
     return (
         <main className="flex">
             <article className="flex-1 text-justify">
                 <Container className="prose prose-lg">
                     <header>
-                        <h1>Pozisional və qeyri-pozisional say sistemləri</h1>
+                        <h1>Mövqeli və mövqesiz say sistemləri</h1>
                         <p>
                             Bu məqalə say sistemləri anlayışını sadə və praktik nümunələrlə izah edir. Diqqət əsasən iki böyük kateqoriyaya yönəldilir:{" "}
-                            <strong>pozisional</strong> (rəqəmin dəyəri <em>mövqeyindən</em> asılıdır) və <strong>qeyri-pozisional</strong> (rəqəmin dəyəri{" "}
+                            <strong>mövqeli</strong> (rəqəmin qiyməti <em>mövqeyindən</em> asılıdır) və <strong>mövqesiz</strong> (rəqəmin qiyməti{" "}
                             <em>sabitdir</em>) sistemlər.
                         </p>
                     </header>
@@ -29,47 +29,47 @@ export default function MeqalePozisionalQeyriPozisional() {
                     <section>
                         <h2>Say sistemi nədir?</h2>
                         <p>
-                            Say sistemi — <em>sayıları işarələmə və yazma qaydaları</em> toplusudur. Hər bir sistemin <strong>əsası</strong> və{" "}
+                            Say sistemi — <em>ədədləri işarələmə və yazma qaydaları</em> toplusudur. Hər bir sistemin <strong>əsası</strong> və{" "}
                             <strong>rəqəmlər toplusu</strong> olur. Məsələn, onluq sistemdə əsas 10-dur və rəqəmlər toplusu 0–9-dan ibarətdir.
                         </p>
                     </section>
 
                     <section>
-                        <h2>Pozisional və qeyri-pozisional fərqi</h2>
+                        <h2>Mövqeli və mövqesiz fərqi</h2>
                         <p>
-                            <strong>Pozisional</strong> sistemlərdə rəqəmin dəyəri onun <em>mövqeyindən</em> asılıdır. Məsələn, 507 sayında 5 — yüzlük, 0 —
-                            onluq, 7 — birlik deməkdir. <strong>Qeyri-pozisional</strong> sistemlərdə isə rəqəm harada dayanmasından asılı olmayaraq dəyərini
-                            dəyişmir; sayın dəyəri rəqəmlərin <em>cəmi</em> və ya <em>qaydalı kombinasiya</em>ları ilə hesablanır.
+                            <strong>Mövqeli</strong> sistemlərdə rəqəmin qiyməti onun <em>mövqeyindən</em> asılıdır. Məsələn, 507 ədədində 5 — yüzlük, 0 —
+                            onluq, 7 — təklik deməkdir. <strong>Mövqesiz</strong> sistemlərdə isə rəqəm harada dayanmasından asılı olmayaraq qiymətini
+                            dəyişmir; ədədin qiyməti rəqəmlərin <em>cəmi</em> və ya <em>qaydalı kombinasiya</em>ları ilə hesablanır.
                         </p>
                     </section>
 
                     <section>
-                        <h2>Qeyri-pozisional sistemlər</h2>
+                        <h2>Mövqesiz sistemlər</h2>
                         <ul>
                             <li>
                                 <strong>Ştrix (tally) yazısı:</strong> <code>||||</code> = 4, <code>|||| |||</code> = 7. Hər ştrix həmişə 1-ə bərabərdir; mövqe
                                 əhəmiyyətsizdir.
                             </li>
                             <li>
-                                <strong>Rim rəqəmləri:</strong> <code>I=1</code>, <code>V=5</code>, <code>X=10</code>, <code>L=50</code>, <code>C=100</code>,{" "}
-                                <code>D=500</code>, <code>M=1000</code>. Saylar əsasən toplama (bəzən çıxma) qaydaları ilə qurulur. Məsələn,{" "}
-                                <code>VIII = 5+3 = 8</code>, <code>IX = 10−1 = 9</code>, <code>XL = 50−10 = 40</code>.
+                                <strong>Roma (rum) rəqəmləri:</strong> <code>I=1</code>, <code>V=5</code>, <code>X=10</code>, <code>L=50</code>,{" "}
+                                <code>C=100</code>, <code>D=500</code>, <code>M=1000</code>. Ədədlər əsasən toplama (bəzən çıxma) qaydaları ilə qurulur.
+                                Məsələn, <code>VIII = 5+3 = 8</code>, <code>IX = 10−1 = 9</code>, <code>XL = 50−10 = 40</code>.
                             </li>
                             <li>
-                                <strong>Qədim Misir rəqəmləri:</strong> birlik, onluq, yüzlük işarələrinin təkrari cəmi ilə say yazılır (mövqe əhəmiyyətli
+                                <strong>Qədim Misir rəqəmləri:</strong> təklik, onluq, yüzlük işarələrinin təkrari cəmi ilə ədəd yazılır (mövqe əhəmiyyətli
                                 deyil).
                             </li>
                         </ul>
                         <p>
-                            Qeyri-pozisional sistemlərdə <em>böyük sayların yazılması</em> çox işarə tələb edir və <em>arifmetik əməliyyatlar</em> (xüsusilə
+                            Mövqesiz sistemlərdə <em>böyük ədədlərin yazılması</em> çox işarə tələb edir və <em>arifmetik əməliyyatlar</em> (xüsusilə
                             vurma/bölmə) çətinləşir.
                         </p>
                     </section>
 
                     <section>
-                        <h2>Pozisional sistemlər</h2>
+                        <h2>Mövqeli sistemlər</h2>
                         <p>
-                            Pozisional sistemdə say aşağıdakı <em>çoxhədli</em> formasında şərh olunur:
+                            Mövqeli sistemdə ədəd aşağıdakı <em>çoxhədli</em> formasında şərh olunur:
                         </p>
                         <pre>
                             <code>{`(a_n a_{n-1} ... a_1 a_0)_b = a_n*b^n + a_{n-1}*b^{n-1} + ... + a_1*b + a_0
@@ -77,11 +77,11 @@ export default function MeqalePozisionalQeyriPozisional() {
                         </pre>
                         <p>
                             Burada <strong>b</strong> — sistemin əsasıdır; məsələn, onluqda <strong>b=10</strong>, ikilikdə <strong>b=2</strong>, onaltılıqda{" "}
-                            <strong>b=16</strong>. <strong>0</strong> rəqəmi pozisional sistemlərdə vacibdir: yer tutucu və “yox dəyəri” ifadə edən rəqəm kimi
+                            <strong>b=16</strong>. <strong>0</strong> rəqəmi mövqeli sistemlərdə vacibdir: yer tutucu və “yox qiyməti” ifadə edən rəqəm kimi
                             işlədilir.
                         </p>
 
-                        <strong>Yayğın pozisional sistemlər</strong>
+                        <strong>Yayğın mövqeli sistemlər</strong>
                         <ul>
                             <li>
                                 <strong>Onluq (b=10):</strong> gündəlik həyat, maliyyə, ölçmələrdə standart.
@@ -100,28 +100,28 @@ export default function MeqalePozisionalQeyriPozisional() {
                     </section>
 
                     <section>
-                        <h2>Niyə pozisional sistemlər əlverişlidir?</h2>
+                        <h2>Niyə mövqeli sistemlər əlverişlidir?</h2>
                         <ol>
                             <li>
-                                <strong>Yığcam yazı:</strong> Eyni dəyəri daha az işarə ilə ifadə etmək mümkündür.
+                                <strong>Yığcam yazı:</strong> Eyni qiyməti daha az işarə ilə ifadə etmək mümkündür.
                             </li>
                             <li>
-                                <strong>Algoritmik arifmetika:</strong> toplama, çıxma, vurma, bölmə üçün sabit, təkrarlana bilən alqoritmlər var.
+                                <strong>Alqoritmik arifmetika:</strong> toplama, çıxma, vurma, bölmə üçün sabit, təkrarlana bilən alqoritmlər var.
                             </li>
                             <li>
-                                <strong>Miqyaslanma:</strong> Əsas dəyişsə belə ümumi qaydalar (mövqe dəyəri, dərəcələr) qorunur.
+                                <strong>Miqyaslanma:</strong> Əsas dəyişsə belə ümumi qaydalar (mövqe qiyməti, dərəcələr) qorunur.
                             </li>
                         </ol>
                     </section>
 
                     <section>
-                        <h2>Qeyri-pozisional sistemlərdə arifmetika niyə çətindir?</h2>
+                        <h2>Mövqesiz sistemlərdə arifmetika niyə çətindir?</h2>
                         <ul>
                             <li>
                                 <strong>Cəm əsasında quruluş:</strong> Rəqəmlər sadəcə cəmlənir; vurma — təkrari toplama olduğundan yazılar mürəkkəbləşir.
                             </li>
                             <li>
-                                <strong>Subtraktiv qaydalar:</strong> Rim rəqəmlərində <code>IV</code>, <code>IX</code> kimi hallar alqoritmləri sadələşdirmir.
+                                <strong>Çıxma qaydaları:</strong> Roma rəqəmlərində <code>IV</code>, <code>IX</code> kimi hallar alqoritmləri sadələşdirmir.
                             </li>
                             <li>
                                 <strong>0 rəqəmi yoxdur və ya az işlədilir:</strong> Yer tutucu boş mövqe olmadığından sistemi ümumiləşdirmək çətinləşir.
@@ -132,15 +132,15 @@ export default function MeqalePozisionalQeyriPozisional() {
                             <thead>
                                 <tr>
                                     <th>Xüsusiyyət</th>
-                                    <th>Pozisional</th>
-                                    <th>Qeyri-pozisional</th>
+                                    <th>Mövqeli</th>
+                                    <th>Mövqesiz</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Rəqəmin dəyəri</td>
+                                    <td>Rəqəmin qiyməti</td>
                                     <td>
-                                        Mövqedən asılıdır (<em>mövqe dəyəri</em>)
+                                        Mövqedən asılıdır (<em>mövqe qiyməti</em>)
                                     </td>
                                     <td>Sabit, mövqedən asılı deyil</td>
                                 </tr>
@@ -151,7 +151,7 @@ export default function MeqalePozisionalQeyriPozisional() {
                                 </tr>
                                 <tr>
                                     <td>Arifmetika</td>
-                                    <td>Algoritmik, daha sadə</td>
+                                    <td>Alqoritmik, daha sadə</td>
                                     <td>Mürəkkəb, qayda dəstlərinə söykənir</td>
                                 </tr>
                                 <tr>
@@ -169,7 +169,7 @@ export default function MeqalePozisionalQeyriPozisional() {
                         <p>Gəlin, bir neçə nümunəyə baxaq:</p>
                         <ul>
                             <li>
-                                <strong>Rim → onluq:</strong> MCMLXXXIV = 1000 + (1000−100) + 50 + 10 + 10 + 10 + (5−1) = 1984.
+                                <strong>Roma → onluq:</strong> MCMLXXXIV = 1000 + (1000−100) + 50 + 10 + 10 + 10 + (5−1) = 1984.
                             </li>
                             <li>
                                 <strong>İkilik → onluq:</strong> 1100101<sub>2</sub> = 64 + 32 + 4 + 1 = 101<sub>10</sub>.
@@ -190,10 +190,10 @@ export default function MeqalePozisionalQeyriPozisional() {
                                 <strong>Əsasdan böyük rəqəmdən istifadə:</strong> məsələn, ikilikdə <b>2</b> və ya <b>3</b> ola bilməz.
                             </li>
                             <li>
-                                <strong>Kəsr çevrilməsini tez dayandırmaq:</strong> xəta nəzarəti üçün addım sayı və dəqiqlik əvvəlcədən müəyyənləşdirilməlidir.
+                                <strong>Kəsr çevirməsini tez dayandırmaq:</strong> xəta nəzarəti üçün addım sayı və dəqiqlik əvvəlcədən müəyyənləşdirilməlidir.
                             </li>
                             <li>
-                                <strong>Rim rəqəmlərində subtraksiyanın sui-istifadəsi:</strong> <b>IL</b> (49) kimi yazılış standartlara görə düzgün deyil,
+                                <strong>Roma rəqəmlərində çıxmanın sui-istifadəsi:</strong> <b>IL</b> (49) kimi yazılış standartlara görə düzgün deyil,
                                 əslində <b>XLIX</b> doğrudur.
                             </li>
                         </ul>
@@ -201,8 +201,8 @@ export default function MeqalePozisionalQeyriPozisional() {
 
                     <section>
                         <p>
-                            Qeyri-pozisional sistemlər tarixi və mədəni baxımdan maraqlı olsa da, müasir elm və texnikada <strong>pozisional</strong> sistemlər
-                            praktik baxımdan üstündür. Onların əsas gücü — mövqe dəyəri, 0 rəqəmi və algoritmik arifmetikadır. Çevirmə üsullarını bilmək isə
+                            Mövqesiz sistemlər tarixi və mədəni baxımdan maraqlı olsa da, müasir elm və texnikada <strong>mövqeli</strong> sistemlər
+                            praktik baxımdan üstündür. Onların əsas gücü — mövqe qiyməti, 0 rəqəmi və alqoritmik arifmetikadır. Çevirmə üsullarını bilmək isə
                             proqramlaşdırma və mühəndislikdə gündəlik işi xeyli sadələşdirir.
                         </p>
                     </section>

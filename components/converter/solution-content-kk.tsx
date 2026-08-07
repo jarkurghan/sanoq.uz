@@ -123,7 +123,7 @@ export default function SolutionContentKK(props: SolutionContentProps) {
                                             </code>
                                         </p>
 
-                                        <p className="mb-2 mt-2">Орындық мән бойынша жіктеу:</p>
+                                        <p className="mb-2 mt-2">Разрядтық ыдырау:</p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             <span className="block">
                                                 {displayWhole

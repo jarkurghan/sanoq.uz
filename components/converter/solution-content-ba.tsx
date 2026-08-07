@@ -91,7 +91,7 @@ export default function SolutionContentBA(props: SolutionContentProps) {
                                 )}
                                 {part.fraction && (
                                     <span className="block mt-1">
-                                        өлөшлө өлөшө: <code className="bg-card text-card-foreground p-1 rounded">0.{inputFractionalPart}</code>
+                                        кәсер өлөшө: <code className="bg-card text-card-foreground p-1 rounded">0.{inputFractionalPart}</code>
                                     </span>
                                 )}
                             </p>
@@ -161,7 +161,7 @@ export default function SolutionContentBA(props: SolutionContentProps) {
 
                                 {isZeroWhole && (
                                     <p className="mb-4">
-                                        Бөтөн өлөш <code className="bg-card text-card-foreground px-1 rounded">0</code> — шуға күрә унлыҡ системалағы бөтөн
+                                        Бөтөн өлөш <code className="bg-card text-card-foreground px-1 rounded">0</code> — шуға күрә унарлы системалағы бөтөн
                                         өлөш тә <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> була.
                                     </p>
                                 )}
@@ -169,7 +169,7 @@ export default function SolutionContentBA(props: SolutionContentProps) {
                                 {!isHiddenFractionalPart && (
                                     <React.Fragment>
                                         <p className={`font-medium mb-2 ${!isHiddenWholePart ? "mt-8" : ""}`}>
-                                            Өлөшлө өлөшө:{" "}
+                                            Кәсер өлөшө:{" "}
                                             <code className="bg-card text-card-foreground px-1 rounded">
                                                 0.{inputFractionalPart}
                                                 {SUBSCRIPTS[fromBase]}
@@ -277,7 +277,7 @@ export default function SolutionContentBA(props: SolutionContentProps) {
                                 {!isHiddenFractionalPart && (
                                     <React.Fragment>
                                         <p className="font-medium mt-8 mb-2">
-                                            Өлөшлө өлөшө:{" "}
+                                            Кәсер өлөшө:{" "}
                                             <code className="bg-card text-card-foreground px-1 py-1 rounded">
                                                 0{decFractionalPart.value}
                                                 {SUBSCRIPTS[10]} {decFractionalPart.exact ? "=" : "≈"}{" "}
@@ -286,7 +286,7 @@ export default function SolutionContentBA(props: SolutionContentProps) {
                                         </p>
 
                                         <p className="mb-2">
-                                            Өлөштө {toBase}-гә күбәйтәбеҙ: күбәйтеүҙең <em>бөтөн өлөшө</em> — киләһе цифр; <em>ҡалған өлөш</em> менән дауам итәбеҙ:
+                                            Кәсерҙе {toBase}-гә күбәйтәбеҙ: күбәйтеүҙең <em>бөтөн өлөшө</em> — киләһе цифр; <em>ҡалған өлөш</em> менән дауам итәбеҙ:
                                         </p>
 
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2">

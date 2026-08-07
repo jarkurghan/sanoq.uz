@@ -36,7 +36,7 @@ const NumeralSystem = () => {
             <article className="flex-1 text-justify">
                 <Container className="prose prose-lg">
                     <header>
-                        <h1 >Numeral system</h1>
+                        <h1>Numeral system</h1>
                     </header>
 
                     <section>
@@ -52,8 +52,8 @@ const NumeralSystem = () => {
                             computers), and the number two in the unary numeral system (used in tallying scores).
                         </p>
                         <p>
-                            The number the numeral represents is called its <strong>value</strong>. Additionally, not all number systems can represent the same set
-                            of numbers; for example, Roman, Greek, and Egyptian numerals don't have a representation of the number zero.
+                            The number the numeral represents is called its <strong>value</strong>. Additionally, not all numeral systems can represent the same set
+                            of numbers; for example, Roman, Greek, and Egyptian numerals do not have a representation of the number zero.
                         </p>
                         <p>Ideally, a numeral system will:</p>
                         <ul>
@@ -93,8 +93,8 @@ const NumeralSystem = () => {
                             influencing global commerce, science, and technology.
                         </p>
                         <p>
-                            The first true written positional numeral system is considered to be the
-                            <strong> Hindu–Arabic numeral system</strong>. This system was established by the 7th century in India
+                            The first true written positional numeral system is considered to be the{" "}
+                            <strong>Hindu–Arabic numeral system</strong>. This system was established by the 7th century in India
                             <sup className="text-gray-400">[1]</sup>, but was not yet in its modern form because the use of the digit zero had not yet been widely
                             accepted. Instead of a zero sometimes the digits were marked with dots to indicate their significance, or a space was used as a
                             placeholder. The first widely acknowledged use of zero was in <strong>876</strong>

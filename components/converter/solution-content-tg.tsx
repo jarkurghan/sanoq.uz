@@ -22,7 +22,7 @@ function negPowerExpr(base: number, exp: number): string {
     return `${base}${SUPERSCRIPTMINUS}${superScript(exp)}`;
 }
 
-/** Номи низом аз numbersystem.* (tg.json) — бе қисми «(асос N)» */
+/** Номи система аз numbersystem.* (tg.json) — бе қисми «(асос N)» */
 function systemName(t: (key: string) => string, base: number): string {
     const linguistic = NUMERAL_NAME_TO_LINGUISTIC_NAME[String(base)];
     const full = linguistic ? t("numbersystem." + linguistic) : t("calculator.info.title." + base);
@@ -71,7 +71,7 @@ export default function SolutionContentTG(props: SolutionContentProps) {
 
                         {needsTwoSteps && (
                             <p className="mb-4 text-muted-foreground">
-                                Ба ҷои табдили мустақим, аввал ба {decimalName} мегузарем, сипас ба низоми ҳадаф. Ин усул барои ҳар гуна ҷуфти асосҳо кор
+                                Ба ҷои табдили мустақим, аввал ба {decimalName} мегузарем, сипас ба системаи ҳадаф. Ин усул барои ҳар гуна ҷуфти асосҳо кор
                                 мекунад.
                             </p>
                         )}
@@ -250,7 +250,7 @@ export default function SolutionContentTG(props: SolutionContentProps) {
                                         )}
 
                                         <p className="mb-2 mt-2">
-                                            Ададро ба {toBase} такроран тақсим карда, ҳар дафъа <em>бақияро</em> қайд мекунем. Бақияҳо — рақамҳои низоми нав:
+                                            Ададро ба {toBase} такроран тақсим карда, ҳар дафъа <em>бақияро</em> қайд мекунем. Бақияҳо — рақамҳои системаи нав:
                                         </p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             {toWholePart.steps
@@ -270,7 +270,7 @@ export default function SolutionContentTG(props: SolutionContentProps) {
 
                                 {isZeroWhole && (
                                     <p className="mb-4">
-                                        Қисми бутун <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> дар низоми ҳадаф низ{" "}
+                                        Қисми бутун <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> дар системаи ҳадаф низ{" "}
                                         <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[toBase]}</code> боқӣ мемонад.
                                     </p>
                                 )}

@@ -22,7 +22,7 @@ function negPowerExpr(base: number, exp: number): string {
     return `${base}${SUPERSCRIPTMINUS}${superScript(exp)}`;
 }
 
-/** Ulgam ady numbersystem.* açaryndan; «(esas N)» bölegi tekst üçin aýrylýar */
+/** Sistema ady numbersystem.* açaryndan; «(esas N)» bölegi tekst üçin aýrylýar */
 function systemName(t: (key: string) => string, base: number): string {
     const linguistic = NUMERAL_NAME_TO_LINGUISTIC_NAME[String(base)];
     const full = linguistic ? t("numbersystem." + linguistic) : t("calculator.info.title." + base);
@@ -70,7 +70,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
 
                         {needsTwoSteps && (
                             <p className="mb-4 text-muted-foreground">
-                                Göni geçirmegiň ýerine ilki {decimalName}na, soňra maksat ulgamyna geçýäris. Bu usul islendik iki esasyň
+                                Göni geçirmegiň ýerine ilki {decimalName}na, soňra maksat sistemasyna geçýäris. Bu usul islendik iki esasyň
                                 arasynda işleýär.
                             </p>
                         )}
@@ -86,7 +86,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                 )}
                                 {part.whole && (
                                     <span className="block mt-1">
-                                        tutuş bölegi: <code className="bg-card text-card-foreground p-1 rounded">{displayWhole}</code>
+                                        bitin bölegi: <code className="bg-card text-card-foreground p-1 rounded">{displayWhole}</code>
                                     </span>
                                 )}
                                 {part.fraction && (
@@ -106,7 +106,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                     </strong>
                                 </p>
                                 <p className="mb-4 text-sm text-muted-foreground">
-                                    Her bir san belgisi ýerine görä {fromBase}-iň derejesine köpeldilýär (
+                                    Her bir sifr ýerine görä {fromBase}-iň derejesine köpeldilýär (
                                     {fromBase}
                                     {superScript(0)}, {fromBase}
                                     {superScript(1)}, {fromBase}
@@ -116,14 +116,14 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                 {!isHiddenWholePart && (
                                     <React.Fragment>
                                         <p className="font-medium">
-                                            Tutuş bölegi:{" "}
+                                            Bitin bölegi:{" "}
                                             <code className="bg-card text-card-foreground px-1 rounded">
                                                 {displayWhole}
                                                 {SUBSCRIPTS[fromBase]}
                                             </code>
                                         </p>
 
-                                        <p className="mb-2 mt-2">Ýer bahasy boýunça ýazmak:</p>
+                                        <p className="mb-2 mt-2">Orun bahasy boýunça ýazmak:</p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             <span className="block">
                                                 {displayWhole
@@ -161,7 +161,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
 
                                 {isZeroWhole && (
                                     <p className="mb-4">
-                                        Tutuş bölek <code className="bg-card text-card-foreground px-1 rounded">0</code> — şonuň üçin onluk ulgamdaky tutuş
+                                        Bitin bölek <code className="bg-card text-card-foreground px-1 rounded">0</code> — şonuň üçin onluk hasaplaýyş sistemasyndaky bitin
                                         bölek hem <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> bolýar.
                                     </p>
                                 )}
@@ -176,7 +176,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                             </code>
                                         </p>
 
-                                        <p className="mb-2">Nokatdan soňky san belgilari otrisatel derejeler bilen ýazylýar:</p>
+                                        <p className="mb-2">Nokatdan soňky sifrler otrisatel derejeler bilen ýazylýar:</p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             <span className="block">
                                                 {inputFractionalPart
@@ -240,7 +240,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                     <React.Fragment>
                                         {!isHiddenFractionalPart && (
                                             <p className="font-medium">
-                                                Tutuş bölegi:{" "}
+                                                Bitin bölegi:{" "}
                                                 <code className="bg-card text-card-foreground px-1 rounded">
                                                     {decWholePart}
                                                     {SUBSCRIPTS[10]}
@@ -249,7 +249,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                         )}
 
                                         <p className="mb-2 mt-2">
-                                            Sany {toBase}-e gaýta-gaýta bölüp, her gezek <em>galdygy</em> ýazýarys. Galdyklar — täze ulgamdaky san belgilari:
+                                            Sany {toBase}-e gaýta-gaýta bölüp, her gezek <em>galdygy</em> ýazýarys. Galdyklar — täze sistemadaky sifrler:
                                         </p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             {toWholePart.steps
@@ -269,7 +269,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
 
                                 {isZeroWhole && (
                                     <p className="mb-4">
-                                        Tutuş bölek <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> maksat ulgamynda hem{" "}
+                                        Bitin bölek <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> maksat sistemasynda hem{" "}
                                         <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[toBase]}</code> bolýar.
                                     </p>
                                 )}
@@ -286,7 +286,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                         </p>
 
                                         <p className="mb-2">
-                                            Kesiri {toBase}-e köpeldýäris: köpeltmäniň <em>tutuş bölegi</em> — indiki san belgi; <em>galan kesir</em> bilen dowam edýäris:
+                                            Kesiri {toBase}-e köpeldýäris: köpeltmäniň <em>bitin bölegi</em> — indiki sifr; <em>galan kesir</em> bilen dowam edýäris:
                                         </p>
 
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2">
@@ -297,7 +297,7 @@ export default function SolutionContentTK(props: SolutionContentProps) {
                                                         <InlineMath
                                                             math={`\\dfrac{${step.numerator}}{${step.denominator}} \\times ${step.multiplicand} = ${digit} + \\dfrac{${step.result}}{${step.denominator}}`}
                                                         />
-                                                        <span className="ml-3 text-muted-foreground">→ san belgi {digit}</span>
+                                                        <span className="ml-3 text-muted-foreground">→ sifr {digit}</span>
                                                     </span>
                                                 );
                                             })}

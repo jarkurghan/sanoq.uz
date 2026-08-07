@@ -122,7 +122,7 @@ export default function SolutionContentAZ(props: SolutionContentProps) {
                                             </code>
                                         </p>
 
-                                        <p className="mb-2 mt-2">Yer dəyəri açılışı:</p>
+                                        <p className="mb-2 mt-2">Mövqe qiyməti açılışı:</p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             <span className="block">
                                                 {displayWhole

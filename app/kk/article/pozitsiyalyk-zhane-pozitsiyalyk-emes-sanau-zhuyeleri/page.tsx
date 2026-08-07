@@ -148,7 +148,7 @@ export default function MaqolaPozitsionNopozitsion() {
                                 <tr>
                                     <td>0 цифры</td>
                                     <td>Орталық рөл атқарады</td>
-                                    <td>Кәдімде жоқ немесе сирек қолданылады</td>
+                                    <td>Әдетте жоқ немесе сирек қолданылады</td>
                                 </tr>
                                 <tr>
                                     <td>Арифметика</td>

@@ -22,7 +22,7 @@ function negPowerExpr(base: number, exp: number): string {
     return `${base}${SUPERSCRIPTMINUS}${superScript(exp)}`;
 }
 
-/** Система исеме numbersystem.* ачкычыннан; «(асас N)» өлеше текст өчен алына */
+/** Система исеме numbersystem.* ачкычыннан; «(нигез N)» өлеше текст өчен алына */
 function systemName(t: (key: string) => string, base: number): string {
     const linguistic = NUMERAL_NAME_TO_LINGUISTIC_NAME[String(base)];
     const full = linguistic ? t("numbersystem." + linguistic) : t("calculator.info.title." + base);
@@ -161,7 +161,7 @@ export default function SolutionContentTT(props: SolutionContentProps) {
 
                                 {isZeroWhole && (
                                     <p className="mb-4">
-                                        Бөтен өлеш <code className="bg-card text-card-foreground px-1 rounded">0</code> — шуңа күрә унлык системадагы бөтен
+                                        Бөтен өлеш <code className="bg-card text-card-foreground px-1 rounded">0</code> — шуңа күрә унарлы системадагы бөтен
                                         өлеш тә <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> була.
                                     </p>
                                 )}

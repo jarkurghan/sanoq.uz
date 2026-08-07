@@ -63,13 +63,13 @@ export default function SolutionContentAR(props: SolutionContentProps) {
 
                         {needsTwoSteps && (
                             <p className="mb-4 text-muted-foreground">
-                                بدل التحويل المباشر، ننتقل أولاً إلى {decimalName}، ثم إلى النظام الهدف. هذه الطريقة تعمل لأي أساسين.
+                                بدلًا من التحويل المباشر، ننتقل أولًا إلى {decimalName}، ثم إلى النظام الهدف. هذه الطريقة تعمل لأي أساسين.
                             </p>
                         )}
 
                         {part.count > 1 && (
                             <p className="mb-4">
-                                أولاً، نجزّئ العدد إلى أجزاء:
+                                أولًا، نجزّئ العدد إلى أجزاء:
                                 {part.negative && (
                                     <span className="block mt-1">
                                         الإشارة: <code className="bg-card text-card-foreground p-1 rounded" dir="ltr">−</code>
@@ -104,7 +104,7 @@ export default function SolutionContentAR(props: SolutionContentProps) {
                                     </strong>
                                 </p>
                                 <p className="mb-4 text-sm text-muted-foreground">
-                                    نضرب كل رقم في قوة لـ {fromBase} حسب موضعه (
+                                    نضرب كل رقم في قوة الأساس {fromBase} حسب موضعه (
                                     <span dir="ltr" className="inline-block">
                                         {fromBase}
                                         {superScript(0)}، {fromBase}
@@ -124,7 +124,7 @@ export default function SolutionContentAR(props: SolutionContentProps) {
                                             </code>
                                         </p>
 
-                                        <p className="mb-2 mt-2">التوسّع حسب المنازل:</p>
+                                        <p className="mb-2 mt-2">التحليل حسب القيمة المكانية:</p>
                                         <pre
                                             className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap text-left"
                                             dir="ltr"
@@ -184,7 +184,7 @@ export default function SolutionContentAR(props: SolutionContentProps) {
                                             </code>
                                         </p>
 
-                                        <p className="mb-2">الأرقام بعد الفاصلة تُكتب بقوى سالبة:</p>
+                                        <p className="mb-2">الأرقام بعد الفاصلة تُحسب بقوى سالبة للأساس:</p>
                                         <pre
                                             className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap text-left"
                                             dir="ltr"

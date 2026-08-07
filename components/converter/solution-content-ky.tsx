@@ -65,12 +65,12 @@ export default function SolutionContentKY(props: SolutionContentProps) {
                                 {inputFractionalPart}
                                 {SUBSCRIPTS[fromBase]}
                             </code>{" "}
-                            санын {fromName}нан {toName}на өткөрүү
+                            санын {fromName}нан {toName}на которуу
                         </h2>
 
                         {needsTwoSteps && (
                             <p className="mb-4 text-muted-foreground">
-                                Түз өткөрүүнүн ордуна адегенде {decimalName}на, андан кийин максаттуу системага өтөбүз. Бул ыкма каалаган эки негиз
+                                Түз которуунун ордуна адегенде {decimalName}на, андан кийин максаттуу системага өтөбүз. Бул ыкма каалаган эки негиз
                                 арасында иштейт.
                             </p>
                         )}
@@ -102,7 +102,7 @@ export default function SolutionContentKY(props: SolutionContentProps) {
                                 <p className="mb-4">
                                     <strong>
                                         {needsTwoSteps && "1-кадам: "}
-                                        {fromName}нан {decimalName}на өткөрөбүз
+                                        {fromName}нан {decimalName}на которобуз
                                     </strong>
                                 </p>
                                 <p className="mb-4 text-sm text-muted-foreground">
@@ -232,7 +232,7 @@ export default function SolutionContentKY(props: SolutionContentProps) {
                                 <p className="mb-4 mt-8">
                                     <strong>
                                         {needsTwoSteps && "2-кадам: "}
-                                        {decimalName}нан {toName}на өткөрөбүз
+                                        {decimalName}нан {toName}на которобуз
                                     </strong>
                                 </p>
 

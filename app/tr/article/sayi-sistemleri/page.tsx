@@ -17,8 +17,8 @@ export function generateMetadata(): Metadata {
         "sayı sistemleri",
         "Hint-Arap rakamları",
         "sayıların tarihi",
-        "ondalık sistem",
-        "Romen rakamları",
+        "onluk sistem",
+        "Roma rakamları",
         "Maya rakamları",
         "matematik",
         "sayı yazımı",
@@ -43,8 +43,8 @@ const NumeralSystem = () => {
                         </p>
                         <p>
                             Aynı semboller dizisi farklı sayı sistemlerinde farklı anlamlar taşıyabilir. Örneğin,{" "}
-                            <code className="[font-family:'Times_New_Roman',serif] px-1 py-0.5 rounded">"11"</code> ondalık sayı sisteminde (bugün dünyada en
-                            yaygın kullanılan) on biri ifade eder, ikilik sayı sisteminde (modern bilgisayarlarda kullanılır) üçü gösterir, birlik sayı
+                            <code className="[font-family:'Times_New_Roman',serif] px-1 py-0.5 rounded">"11"</code> onluk sayı sisteminde (bugün dünyada en
+                            yaygın kullanılan) on biri ifade eder, ikilik sayı sisteminde (modern bilgisayarlarda kullanılır) üçü gösterir, birli sayı
                             sisteminde ise (çetele tutmada) ikiye karşılık gelir.
                         </p>
                         <p>
@@ -58,7 +58,7 @@ const NumeralSystem = () => {
                             <li>Sayıların cebirsel ve aritmetik yapısını yansıtmak</li>
                         </ul>
                         <p>
-                            Örneğin, klasik ondalık sayı sisteminde sıfırdan farklı her doğal sayı, başında sıfır olmayan rakamla başlayan sonlu bir rakamlar
+                            Örneğin, klasik onluk sayı sisteminde sıfırdan farklı her doğal sayı, başında sıfır olmayan rakamla başlayan sonlu bir rakamlar
                             dizisiyle tekil biçimde ifade edilir.
                         </p>
                         <p>
@@ -85,11 +85,11 @@ const NumeralSystem = () => {
                         <p>
                             Hintli matematikçiler, örneğin 7. yüzyılda yaşamış olan <strong>Brahmagupta</strong>, aritmetik kuralları sistemleştirmede ve sıfır
                             kavramını tanımlamada kritik rol oynamışlardır. Daha sonra İslam dünyasındaki bilginler, özellikle <strong>El-Harezmi</strong>, bu
-                            fikirleri geliştirmiştir. Sayı sistemleri evrildikçe, pozisyonel yazının verimliliği ve sıfırın eklenmesi modern sayı gösterimini
+                            fikirleri geliştirmiştir. Sayı sistemleri evrildikçe, konumsal yazının verimliliği ve sıfırın eklenmesi modern sayı gösterimini
                             şekillendirmiş, küresel ticaret, bilim ve teknolojiye büyük etki etmiştir.
                         </p>
                         <p>
-                            İlk gerçek yazılı pozisyonel sayı sistemi <strong>Hint–Arap sayı sistemi</strong> kabul edilmektedir. Bu sistem 7. yüzyılda
+                            İlk gerçek yazılı konumsal sayı sistemi <strong>Hint–Arap sayı sistemi</strong> kabul edilmektedir. Bu sistem 7. yüzyılda
                             Hindistan’da ortaya çıkmıştır
                             <sup className="text-gray-400">[1]</sup>, fakat henüz modern biçimde değildi, çünkü sıfırın kullanımı yaygınlaşmamıştı. Sıfır yerine
                             bazen noktalar kullanılmış ya da boşluk bırakılmıştır. Sıfırın ilk geniş kabul gören kullanımı
@@ -145,8 +145,8 @@ const NumeralSystem = () => {
                             height={300}
                         />
                         <p>
-                            <strong>Çubuk rakamları</strong>, Çinli ve Japon matematikçiler tarafından kullanılan yazılı biçimlerdir. Bu sistem ondalık
-                            pozisyonel sistemdi ve ondalık hesaplamalarda kullanılırdı. Çubuklar bir hesap tahtasına yerleştirilir, öne veya arkaya kaydırılarak
+                            <strong>Çubuk rakamları</strong>, Çinli ve Japon matematikçiler tarafından kullanılan yazılı biçimlerdir. Bu sistem onluk
+                            konumsal sistemdi ve onluk hesaplamalarda kullanılırdı. Çubuklar bir hesap tahtasına yerleştirilir, öne veya arkaya kaydırılarak
                             basamak değeri değiştirilirdi.
                         </p>
                         <p>
@@ -167,7 +167,7 @@ const NumeralSystem = () => {
                     <section>
                         <h2>Ana sayı sistemleri</h2>
                         <p>
-                            En yaygın kullanılan sayı sistemi ondalık (decimal) sistemdir. Tam sayı versiyonunun geliştirilmesinde Hintli matematikçiler,
+                            En yaygın kullanılan sayı sistemi onluk (decimal) sistemdir. Tam sayı versiyonunun geliştirilmesinde Hintli matematikçiler,
                             özellikle <strong>Hint–Arap rakamları sistemi</strong> büyük rol oynamıştır.
                             <sup className="text-gray-400">[8]</sup> V. yüzyılda Kusumapura’dan <strong>Aryabhata</strong>
                             basamak-değer gösterimini geliştirdi, bir yüzyıl sonra <strong>Brahmagupta</strong> sıfır için sembolü tanıttı. Sistem ticaret ve
@@ -195,22 +195,22 @@ const NumeralSystem = () => {
                             <em>pedwar ar bymtheg a thrigain</em> (4 + (5 + 10) + (3 × 20)).
                         </p>
                         <p>
-                            En gelişmişi pozisyonel (basamaklı) sistemdir. Bu sistemler tabanına göre sınıflandırılır. Ondalık sistemde 0–9 arası on rakam
+                            En gelişmişi konumsal sistemdir. Bu sistemler tabanına göre sınıflandırılır. Onluk sistemde 0–9 arası on rakam
                             kullanılır ve rakamın konumu onun hangi 10’un kuvvetiyle çarpılacağını gösterir: 304 = 3×100 + 0×10 + 4×1, yani 3×10² + 0×10¹ +
                             4×10⁰. Burada sıfır çok önemlidir, çünkü basamakları “atlamaya” olanak sağlar.
                         </p>
                         <p>
-                            Aritmetik işlemler pozisyonel sistemlerde çok daha kolaydır. Katmalı sistemlerde her basamak için ayrı semboller gerekirken,
-                            pozisyonel sistemde (onluk tabanda) sadece on sembol yeterlidir.
+                            Aritmetik işlemler konumsal sistemlerde çok daha kolaydır. Toplamsal sistemlerde her basamak için ayrı semboller gerekirken,
+                            konumsal sistemde (onluk tabanda) sadece on sembol yeterlidir.
                             <sup className="text-gray-400">[10]</sup>
                         </p>
                         <p>
-                            Günümüzde yazıda evrensel olarak ondalık pozisyonel sistem kullanılmaktadır. Ayrıca bazı durumlarda 1000 tabanı da kullanılır;
+                            Günümüzde yazıda evrensel olarak onluk konumsal sistem kullanılmaktadır. Ayrıca bazı durumlarda 1000 tabanı da kullanılır;
                             burada rakamlar üçlü gruplara ayrılır: örneğin 1,000,234,567.
                         </p>
                         <p>
-                            Bilgisayarlarda temel sistem 2 tabanlı pozisyonel sistemdir (ikili/binary). Bu sistemde sadece 0 ve 1 rakamları vardır. İkili sistem
-                            üçlü gruplara ayrıldığında 8 tabanlı (oktal), dörtlü gruplara ayrıldığında 16 tabanlı (hexadecimal) sistem elde edilir. Çok büyük
+                            Bilgisayarlarda temel sistem 2 tabanlı konumsal sistemdir (ikilik/binary). Bu sistemde sadece 0 ve 1 rakamları vardır. İkilik sistem
+                            üçlü gruplara ayrıldığında 8 tabanlı (sekizlik), dörtlü gruplara ayrıldığında 16 tabanlı (onaltılık) sistem elde edilir. Çok büyük
                             sayılar için 2³² veya 2⁶⁴ tabanlı sistemler kullanılır.
                         </p>
                         <p>
@@ -219,7 +219,7 @@ const NumeralSystem = () => {
                         </p>
                         <p>
                             Rakamlar ikiye ayrılır: aritmetik rakamlar (0–9) ve geometrik rakamlar (1, 10, 100...). İşaret–değer sistemleri sadece geometrik
-                            rakamları, pozisyonel sistemler ise sadece aritmetik rakamları kullanır. Ancak konuşma dilinde her ikisi de kullanılır.
+                            rakamları, konumsal sistemler ise sadece aritmetik rakamları kullanır. Ancak konuşma dilinde her ikisi de kullanılır.
                         </p>
                         <p>
                             Bilgisayar biliminde bazen <em>bijektif sayı sistemi</em> denilen, değiştirilmiş <em>k</em>-tabanlı sistem kullanılır. Burada
@@ -229,15 +229,15 @@ const NumeralSystem = () => {
                     </section>
 
                     <section>
-                        <h2>Basamaklı sistemlerin ayrıntıları</h2>
+                        <h2>Konumsal sistemlerin ayrıntıları</h2>
                         <p>
-                            Bir basamaklı <em>b</em> tabanlı sayı sisteminde (<em>b</em>, 1’den büyük doğal sayı olup sistemin tabanı ya da radiksi olarak
+                            Konumsal bir <em>b</em> tabanlı sayı sisteminde (<em>b</em>, 1’den büyük doğal sayı olup sistemin tabanı ya da radiksi olarak
                             bilinir), sıfır dahil olmak üzere ilk <em>b</em> doğal sayıya karşılık gelen <em>b</em> temel sembol (rakam) kullanılır. Diğer
                             sayılar ise sembollerin konumuna göre oluşturulur: en sağdaki rakam kendi değerini ifade eder, sola doğru kaydıkça değeri <em>b</em>{" "}
                             ile çarpılır.
                         </p>
                         <p>
-                            Örneğin, <strong>ondalık</strong> sistemde (taban 10) 4327 sayısı şu şekilde ifade edilir: (4×10³) + (3×10²) + (2×10¹) + (7×10⁰),
+                            Örneğin, <strong>onluk</strong> sistemde (taban 10) 4327 sayısı şu şekilde ifade edilir: (4×10³) + (3×10²) + (2×10¹) + (7×10⁰),
                             burada 10⁰ = 1.
                         </p>
                         <p>
@@ -252,7 +252,7 @@ const NumeralSystem = () => {
                             <code className="[font-family:'Times_New_Roman',serif] px-1">
                                 sayı<sub>taban</sub>
                             </code>
-                            . Aksi belirtilmedikçe, alt indissiz sayılar ondalık kabul edilir.
+                            . Aksi belirtilmedikçe, alt indissiz sayılar onluk kabul edilir.
                         </p>
                         <p>
                             Nokta kullanılarak sayılar iki gruba ayrılır ve kesirler de yazılabilir. Örneğin, 2 tabanında{" "}
@@ -271,7 +271,7 @@ const NumeralSystem = () => {
                             basamak sayının <strong>büyüklük mertebesi</strong>ne yakındır.
                         </p>
                         <p>
-                            Birlik sisteminde (unary) ağırlığı göstermek için <em>w</em> adet işaret gerekirdi. Basamaklı sistemde ise sadece
+                            Birlik sisteminde (unary) ağırlığı göstermek için <em>w</em> adet işaret gerekirdi. Konumsal sistemde ise sadece
                             <Image src="/images/formula_n3.png" className="dark:bg-slate-400 rounded-sm inline" alt="f3" width={131} height={19} />
                             rakam yeterlidir (<em>k ≥ 0</em> için). Örneğin, 1000 ağırlığını göstermek için 4 rakam gerekir, çünkü
                             <code className="[font-family:'Times_New_Roman',serif] px-1">
@@ -280,7 +280,7 @@ const NumeralSystem = () => {
                             .
                         </p>
                         <p>
-                            Bir sayı rasyonel ise basamaklı açılımı ya sonlu ya da periyodiktir. Bir tabanda sonlu olan sayı başka bir tabanda periyodik
+                            Bir sayı rasyonel ise konumsal açılımı ya sonlu ya da devirlidir. Bir tabanda sonlu olan sayı başka bir tabanda devreden
                             olabilir (örn. 0.3₁₀ = 0.010011...₂). İrrasyonel sayılar ise tüm tabanlarda sonsuz ve tekrar etmeyen açılıma sahiptir. Örneğin, 2
                             tabanında π = 3.1415926...₁₀ şu şekilde yazılır: 11.001001000011111...₂.
                         </p>
