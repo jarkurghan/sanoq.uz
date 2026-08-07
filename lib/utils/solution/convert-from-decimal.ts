@@ -7,14 +7,19 @@ export function convertFromDecimal(value: bigint, base: number): WholePartOnToBa
     let dividend = value;
     if (dividend === BigInt(0)) return { value: "0", steps: [] };
 
-    const steps = [];
+    const steps: WholePartOnToBase["steps"] = [];
     let result = "";
     while (dividend > 0) {
         const remainder = dividend % bigBase;
         const quotient = dividend / bigBase;
 
         result = DIGITS[Number(remainder)] + result;
-        steps.push({ dividend: Number(dividend), divisor: base, quotient: Number(quotient), remainder: Number(remainder) });
+        steps.push({
+            dividend: dividend.toString(),
+            divisor: base,
+            quotient: quotient.toString(),
+            remainder: DIGITS[Number(remainder)],
+        });
 
         dividend = quotient;
     }

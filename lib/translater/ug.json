@@ -4,17 +4,14 @@
     "nav.calculator": "ھېسابلىغۇچ",
     "nav.code": "كود",
     "nav.about": "قوللانما ھەققىدە",
-
     "home.from": "قايسى ھېسابلاش سىستېمىسىدىن",
     "home.to": "قايسى ھېسابلاش سىستېمىسىغا",
     "home.input": "ساننى كىرگۈزۈڭ",
     "home.result": "نەتىجە",
     "home.swap": "ئالماشتۇرۇش",
-
     "home.seo.title": "ھېسابلاش سىستېمىسى ئالماشتۇرغۇچ",
     "home.seo.description": "سانلارنى بىر ھېسابلاش سىستېمىسىدىن باشقىسىغا ئاسان ۋە توغرا ئايلاندۇرۇڭ. پۈتۈن سانلار، پەرزەنت سانلار ۋە منپىي قىممەتلەر تولۇق قوللايدۇ. ئالماشتۇرۇش جەريانى قەدەم بە قەدەم چۈشەندۈرۈلىدۇ.",
     "home.seo.keywords": "ھېسابلاش سىستېمىلىرى، سىستېما ئالماشتۇرغۇچ، ئاساس ئالماشتۇرۇش، سانلارنى سىستېمىلار ئارىسىدا ئايلاندۇرۇش، سانلىق ئالماشتۇرغۇچ، ماتېماتىكىلىق ئالماشتۇرۇش، توردا ھېسابلىغۇچ، 2 دىن 36 غىچە بولغان ھېسابلاش سىستېمىسى",
-
     "numbersystem.binary": "ئىككىلىك ساناق سىستېمىسى (ئاساس 2)",
     "numbersystem.octal": "سەكسىزلىك ساناق سىستېمىسى (ئاساس 8)",
     "numbersystem.decimal": "ئونلۇق ساناق سىستېمىسى (ئاساس 10)",
@@ -50,15 +47,12 @@
     "numbersystem.tetratrigesimal": "ئوتتۇز تۆتلۈك ساناق سىستېمىسى (ئاساس 34)",
     "numbersystem.pentatrigesimal": "ئوتتۇز بەشلىك ساناق سىستېمىسى (ئاساس 35)",
     "numbersystem.hexatrigesimal": "ئوتتۇز ئالتىلىك ساناق سىستېمىسى (ئاساس 36)",
-
     "article.search": "ئىزدەش",
     "article.learnmore": "ئوقۇش",
     "article.notfound": "ئىزدەش بويىچە ھېچقانداق تېما تېپىلمىدى.",
-
     "article.seo.title": "مقالىلار — ساناق سىستېمىلىرىغا ئالاقىدار مقالىلارنى ئوقۇڭ ۋە ئۆگنىڭ",
     "article.seo.description": "ساناق سىستېمىلىرى ھەققىدە قىزىقارلىق ۋە پايدىلىق مقالىلارنى بايقىڭ. ئىككىلىك، ئونلۇق ۋە ئون ئالتىلىك سىستېمىلار ھەققىدە چۈشەنەرلىك ۋە ئاددىي ئۇچۇرغا ئېرىشىڭ. تارىخىي ئۇچۇرلار، قوللانما مىساللار ۋە پروگرامما ئىشلەشتە قوللىنىلىشى بىلەن تونۇشۇڭ.",
     "article.seo.keywords": "ساناق سىستېمىلىرى, مقالىلار, ئونلۇق سىستېما, ئىككىلىك سىستېما, ئون ئالتىلىك سىستېما, ماتېماتىكا, سانلار, پوزىتسىيون سىستېما, سان تارىخى, ھېسابلاش",
-
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
@@ -119,7 +113,7 @@
     "calculator.info.title.5": "Beshlik sanoq sistemasi",
     "calculator.info.title.6": "Oltilik sanoq sistemasi",
     "calculator.info.title.7": "Yettilik sanoq sistemasi",
-    "calculator.info.title.9": "Ikkilik sanoq sistemasi",
+    "calculator.info.title.9": "To'qqizlik sanoq sistemasi",
     "calculator.info.title.11": "O'n birlik sanoq sistemasi",
     "calculator.info.title.12": "O'n ikkilik sanoq sistemasi",
     "calculator.info.title.13": "O'n uchlik sanoq sistemasi",

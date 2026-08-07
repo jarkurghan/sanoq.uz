@@ -25,9 +25,9 @@ export type FractionalPartOnToBase = {
 export type WholePartOnToBase = {
     value: string;
     steps: {
-        dividend: number;
+        dividend: string;
         divisor: number;
-        quotient: number;
-        remainder: number;
+        quotient: string;
+        remainder: string;
     }[];
 };

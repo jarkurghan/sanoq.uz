@@ -1,6 +1,7 @@
 import React from "react";
 import { DIGITS } from "@/lib/constants/numeral-system";
 import { NUMERAL_VALUE_DICTIONARY } from "@/lib/constants/numeral-system";
+import { NUMERAL_NAME_TO_LINGUISTIC_NAME } from "@/lib/constants/numeral-system";
 import { SUPERSCRIPTMINUS } from "@/lib/constants/exponent";
 import { SUPERSCRIPTS } from "@/lib/constants/exponent";
 import { SUBSCRIPTS } from "@/lib/constants";
@@ -21,7 +22,14 @@ function negPowerExpr(base: number, exp: number): string {
     return `${base}${SUPERSCRIPTMINUS}${superScript(exp)}`;
 }
 
-export default function SolutionContentRU(props: SolutionContentProps) {
+/** Номи низом аз numbersystem.* (tg.json) — бе қисми «(асос N)» */
+function systemName(t: (key: string) => string, base: number): string {
+    const linguistic = NUMERAL_NAME_TO_LINGUISTIC_NAME[String(base)];
+    const full = linguistic ? t("numbersystem." + linguistic) : t("calculator.info.title." + base);
+    return full.replace(/\s*\([^)]*\)\s*$/u, "").trim();
+}
+
+export default function SolutionContentTG(props: SolutionContentProps) {
     const { fromBase, toBase } = props;
     const { part, isFractional, isNegative, isZeroWhole } = props;
     const { waiting, isHidden } = props;
@@ -35,9 +43,9 @@ export default function SolutionContentRU(props: SolutionContentProps) {
     const t = getTranslation(lang);
     const exact = !isFractional || (decFractionalPart.exact && toFractionalPart.exact);
     const displayWhole = inputWholePart || "0";
-    const fromName = t("calculator.info.title." + fromBase).toLowerCase();
-    const toName = t("calculator.info.title." + toBase).toLowerCase();
-    const decimalName = t("calculator.info.title.10").toLowerCase();
+    const fromName = systemName(t, fromBase);
+    const toName = systemName(t, toBase);
+    const decimalName = systemName(t, 10);
     const needsTwoSteps = !isHiddenStep1 && !isHiddenStep2;
 
     return (
@@ -50,7 +58,7 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                 !isHidden && (
                     <div className="mx-auto pt-10 leading-relaxed">
                         <h2 className="text-xl font-bold mt-6 mb-4">
-                            Перевод{" "}
+                            Табдили{" "}
                             <code className="bg-card text-card-foreground px-1 rounded mx-1">
                                 {isNegative && "−"}
                                 {displayWhole}
@@ -58,33 +66,33 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                 {inputFractionalPart}
                                 {SUBSCRIPTS[fromBase]}
                             </code>{" "}
-                            из {fromName} в {toName}
+                            аз {fromName} ба {toName}
                         </h2>
 
                         {needsTwoSteps && (
                             <p className="mb-4 text-muted-foreground">
-                                Вместо прямого перевода сначала переходим в {decimalName}, затем — в целевую систему. Этот способ работает для любой пары
-                                оснований.
+                                Ба ҷои табдили мустақим, аввал ба {decimalName} мегузарем, сипас ба низоми ҳадаф. Ин усул барои ҳар гуна ҷуфти асосҳо кор
+                                мекунад.
                             </p>
                         )}
 
                         {part.count > 1 && (
                             <p className="mb-4">
-                                Сначала разобьём число на части:
+                                Аввал ададро ба қисмҳо ҷудо мекунем:
                                 {part.negative && (
                                     <span className="block mt-1">
-                                        знак: <code className="bg-card text-card-foreground p-1 rounded">−</code>
-                                        <span className="text-muted-foreground ml-2">(вернём в конце)</span>
+                                        аломат: <code className="bg-card text-card-foreground p-1 rounded">−</code>
+                                        <span className="text-muted-foreground ml-2">(дар охир боз гузошта мешавад)</span>
                                     </span>
                                 )}
                                 {part.whole && (
                                     <span className="block mt-1">
-                                        целая часть: <code className="bg-card text-card-foreground p-1 rounded">{displayWhole}</code>
+                                        қисми бутун: <code className="bg-card text-card-foreground p-1 rounded">{displayWhole}</code>
                                     </span>
                                 )}
                                 {part.fraction && (
                                     <span className="block mt-1">
-                                        дробная часть: <code className="bg-card text-card-foreground p-1 rounded">0.{inputFractionalPart}</code>
+                                        қисми касрӣ: <code className="bg-card text-card-foreground p-1 rounded">0.{inputFractionalPart}</code>
                                     </span>
                                 )}
                             </p>
@@ -94,29 +102,29 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                             <React.Fragment>
                                 <p className="mb-4">
                                     <strong>
-                                        {needsTwoSteps && "Шаг 1: "}
-                                        Переводим из {fromName} в {decimalName}
+                                        {needsTwoSteps && "Қадами 1: "}
+                                        Аз {fromName} ба {decimalName} табдил медиҳем
                                     </strong>
                                 </p>
                                 <p className="mb-4 text-sm text-muted-foreground">
-                                    Каждую цифру умножаем на степень {fromBase} в зависимости от позиции (
+                                    Ҳар рақам мувофиқи ҷойгоҳаш ба дараҷаи {fromBase} зарб карда мешавад (
                                     {fromBase}
                                     {superScript(0)}, {fromBase}
                                     {superScript(1)}, {fromBase}
-                                    {superScript(2)}, …), затем складываем результаты.
+                                    {superScript(2)}, …), сипас ҳосилаҳо ҷамъ карда мешаванд.
                                 </p>
 
                                 {!isHiddenWholePart && (
                                     <React.Fragment>
                                         <p className="font-medium">
-                                            Целая часть:{" "}
+                                            Қисми бутун:{" "}
                                             <code className="bg-card text-card-foreground px-1 rounded">
                                                 {displayWhole}
                                                 {SUBSCRIPTS[fromBase]}
                                             </code>
                                         </p>
 
-                                        <p className="mb-2 mt-2">Разложение по разрядам:</p>
+                                        <p className="mb-2 mt-2">Васеъкунии ҷойгоҳӣ:</p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             <span className="block">
                                                 {displayWhole
@@ -154,22 +162,22 @@ export default function SolutionContentRU(props: SolutionContentProps) {
 
                                 {isZeroWhole && (
                                     <p className="mb-4">
-                                        Целая часть равна <code className="bg-card text-card-foreground px-1 rounded">0</code>, поэтому в десятичной системе
-                                        целая часть тоже <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code>.
+                                        Қисми бутун <code className="bg-card text-card-foreground px-1 rounded">0</code> аст — пас қисми бутуни даҳӣ низ{" "}
+                                        <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> мешавад.
                                     </p>
                                 )}
 
                                 {!isHiddenFractionalPart && (
                                     <React.Fragment>
                                         <p className={`font-medium mb-2 ${!isHiddenWholePart ? "mt-8" : ""}`}>
-                                            Дробная часть:{" "}
+                                            Қисми касрӣ:{" "}
                                             <code className="bg-card text-card-foreground px-1 rounded">
                                                 0.{inputFractionalPart}
                                                 {SUBSCRIPTS[fromBase]}
                                             </code>
                                         </p>
 
-                                        <p className="mb-2">Цифры после точки записываются с отрицательными степенями:</p>
+                                        <p className="mb-2">Рақамҳои баъд аз нуқта бо дараҷаҳои манфӣ навишта мешаванд:</p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             <span className="block">
                                                 {inputFractionalPart
@@ -207,7 +215,7 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                 )}
 
                                 <p className="font-medium mt-8">
-                                    Итого,{" "}
+                                    Пас,{" "}
                                     <code className="bg-card text-card-foreground px-1 rounded">
                                         {displayWhole}
                                         {isFractional ? "." : ""}
@@ -224,8 +232,8 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                             <React.Fragment>
                                 <p className="mb-4 mt-8">
                                     <strong>
-                                        {needsTwoSteps && "Шаг 2: "}
-                                        Переводим из {decimalName} в {toName}
+                                        {needsTwoSteps && "Қадами 2: "}
+                                        Аз {decimalName} ба {toName} табдил медиҳем
                                     </strong>
                                 </p>
 
@@ -233,7 +241,7 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                     <React.Fragment>
                                         {!isHiddenFractionalPart && (
                                             <p className="font-medium">
-                                                Целая часть:{" "}
+                                                Қисми бутун:{" "}
                                                 <code className="bg-card text-card-foreground px-1 rounded">
                                                     {decWholePart}
                                                     {SUBSCRIPTS[10]}
@@ -242,15 +250,15 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                         )}
 
                                         <p className="mb-2 mt-2">
-                                            Делим на {toBase} и каждый раз записываем <em>остаток</em>. Остатки — это цифры в новой системе:
+                                            Ададро ба {toBase} такроран тақсим карда, ҳар дафъа <em>бақияро</em> қайд мекунем. Бақияҳо — рақамҳои низоми нав:
                                         </p>
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
                                             {toWholePart.steps
-                                                .map((step) => `${step.dividend} ÷ ${step.divisor} = ${step.quotient} , остаток ${step.remainder}`)
+                                                .map((step) => `${step.dividend} ÷ ${step.divisor} = ${step.quotient} , бақия ${step.remainder}`)
                                                 .join("\n")}
                                         </pre>
                                         <p className="font-medium mt-2">
-                                            Читаем остатки <em>снизу вверх</em>:
+                                            Бақияҳоро <em>аз поён ба боло</em> мехонем:
                                             <code className="ml-2 bg-card text-card-foreground p-1 rounded">
                                                 {decWholePart}
                                                 {SUBSCRIPTS[10]} = {toWholePart.value}
@@ -262,15 +270,15 @@ export default function SolutionContentRU(props: SolutionContentProps) {
 
                                 {isZeroWhole && (
                                     <p className="mb-4">
-                                        Целая часть <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> в целевой системе тоже{" "}
-                                        <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[toBase]}</code>.
+                                        Қисми бутун <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[10]}</code> дар низоми ҳадаф низ{" "}
+                                        <code className="bg-card text-card-foreground px-1 rounded">0{SUBSCRIPTS[toBase]}</code> боқӣ мемонад.
                                     </p>
                                 )}
 
                                 {!isHiddenFractionalPart && (
                                     <React.Fragment>
                                         <p className="font-medium mt-8 mb-2">
-                                            Дробная часть:{" "}
+                                            Қисми касрӣ:{" "}
                                             <code className="bg-card text-card-foreground px-1 py-1 rounded">
                                                 0{decFractionalPart.value}
                                                 {SUBSCRIPTS[10]} {decFractionalPart.exact ? "=" : "≈"}{" "}
@@ -279,8 +287,8 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                         </p>
 
                                         <p className="mb-2">
-                                            Умножаем дробь на {toBase}: <em>целая часть</em> произведения — очередная цифра; продолжаем с{" "}
-                                            <em>оставшейся дробью</em>:
+                                            Касрро ба {toBase} зарб мекунем: <em>қисми бутун</em>и ҳосила — рақами навбатӣ; бо <em>касри боқимонда</em> идома
+                                            медиҳем:
                                         </p>
 
                                         <pre className="bg-card text-card-foreground p-4 rounded-md text-sm font-mono mt-2">
@@ -291,23 +299,23 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                                                         <InlineMath
                                                             math={`\\dfrac{${step.numerator}}{${step.denominator}} \\times ${step.multiplicand} = ${digit} + \\dfrac{${step.result}}{${step.denominator}}`}
                                                         />
-                                                        <span className="ml-3 text-muted-foreground">→ цифра {digit}</span>
+                                                        <span className="ml-3 text-muted-foreground">→ рақам {digit}</span>
                                                     </span>
                                                 );
                                             })}
                                             {toFractionalPart.period.isPeriod !== false && (
-                                                <span className="block font-bold p-1 text-muted-foreground">… период повторяется</span>
+                                                <span className="block font-bold p-1 text-muted-foreground">… давр такрор мешавад</span>
                                             )}
                                         </pre>
                                         <p className="font-medium mt-2">
                                             {toFractionalPart.period.isPeriod === true && (
                                                 <span className="block mb-1">
-                                                    Процесс периодический: длина периода {toFractionalPart.period.length}
-                                                    {toFractionalPart.value.includes("(") ? " (в скобках)" : ""}.
+                                                    Ин раванд даврӣ аст: дарозии давр {toFractionalPart.period.length}
+                                                    {toFractionalPart.value.includes("(") ? " (дар қавс)" : ""}.
                                                 </span>
                                             )}
                                             {toFractionalPart.period.isPeriod === null && (
-                                                <span className="block mb-1">Период очень длинный — показано приближённое значение.</span>
+                                                <span className="block mb-1">Давр хеле дароз аст — қимати тахминӣ нишон дода шудааст.</span>
                                             )}
                                             <code className="block bg-card text-card-foreground px-1 rounded">
                                                 0{decFractionalPart.value}
@@ -322,8 +330,8 @@ export default function SolutionContentRU(props: SolutionContentProps) {
                         )}
 
                         <p className="font-medium mt-8 mb-2">
-                            <strong className="block mb-1">Итоговый результат:</strong>
-                            {isNegative && <span className="block text-sm text-muted-foreground mb-1">Отрицательный знак сохраняется.</span>}
+                            <strong className="block mb-1">Натиҷаи ниҳоӣ:</strong>
+                            {isNegative && <span className="block text-sm text-muted-foreground mb-1">Аломати манфӣ нигоҳ дошта мешавад.</span>}
                             <code className="bg-card text-card-foreground p-1 rounded text-base">
                                 {isNegative && "−"}
                                 {displayWhole}

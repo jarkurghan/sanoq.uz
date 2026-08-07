@@ -4,17 +4,14 @@
     "nav.calculator": "Kalkulyator",
     "nav.code": "Kod",
     "nav.about": "Tətbiq haqqında",
-
     "home.from": "Hansı say sistemindən",
     "home.to": "Hansı say sisteminə",
     "home.input": "Ədədi daxil edin",
     "home.result": "Nəticə",
     "home.swap": "Dəyişmək",
-
     "home.seo.title": "Say sistemləri çeviricisi",
     "home.seo.description": "Rəqəmləri bir say sistemindən digərinə asan və dəqiq şəkildə çevirin. Tam ədədlər, kəsrlər və mənfi qiymətlər dəstəklənir. Çevirilmə prosesi addım-addım izah olunur.",
     "home.seo.keywords": "say sistemləri, say sistemi çeviricisi, əsas çevirmə, ədədləri sistemlər arasında çevirmək, rəqəm çeviricisi, riyazi çevirmə, onlayn kalkulyator, 2-dən 36-ya qədər say sistemi",
-
     "numbersystem.binary": "İkilik say sistemi (əsas 2)",
     "numbersystem.octal": "Səkkizlik say sistemi (əsas 8)",
     "numbersystem.decimal": "Onluq say sistemi (əsas 10)",
@@ -50,15 +47,12 @@
     "numbersystem.tetratrigesimal": "Otuz dördlük say sistemi (əsas 34)",
     "numbersystem.pentatrigesimal": "Otuz beşlik say sistemi (əsas 35)",
     "numbersystem.hexatrigesimal": "Otuz altılıq say sistemi (əsas 36)",
-
     "article.search": "Axtar",
     "article.learnmore": "Oxu",
     "article.notfound": "Axtarış üzrə heç bir mövzu tapılmadı.",
-
     "article.seo.title": "Məqalələr — Say sistemləri mövzusunda məqalələri oxuyun və öyrənin",
     "article.seo.description": "Say sistemləri haqqında maraqlı və faydalı məqalələri kəşf edin. İkilik, onluq və onaltılıq sistemlər barədə aydın və anlaşıqlı məlumatlar əldə edin. Tarixi məlumatlar, praktik nümunələr və proqramlaşdırmadakı tətbiqlərlə tanış olun.",
     "article.seo.keywords": "say sistemləri, məqalələr, onluq sistem, ikilik sistem, onaltılıq sistem, riyaziyyat, rəqəmlər, mövqeli sistem, rəqəmlərin tarixi, hesablama",
-
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
@@ -119,7 +113,7 @@
     "calculator.info.title.5": "Beshlik sanoq sistemasi",
     "calculator.info.title.6": "Oltilik sanoq sistemasi",
     "calculator.info.title.7": "Yettilik sanoq sistemasi",
-    "calculator.info.title.9": "Ikkilik sanoq sistemasi",
+    "calculator.info.title.9": "To'qqizlik sanoq sistemasi",
     "calculator.info.title.11": "O'n birlik sanoq sistemasi",
     "calculator.info.title.12": "O'n ikkilik sanoq sistemasi",
     "calculator.info.title.13": "O'n uchlik sanoq sistemasi",
@@ -313,10 +307,8 @@
     "calculator.seo.title.36": "O'ttiz oltilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
     "calculator.seo.description.36": "Onlayn 36-lik (base 36) sanoq tizimi kalkulyatori yordamida barcha arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
     "calculator.seo.keywords.36": "36-lik sanoq sistemi, base 36 kalkulyator, 36-lik arifmetika, onlayn base 36 kalkulyator, dasturchilar uchun kalkulyator",
-
     "code.title": "Sanoq Sistemalari Kodi",
     "code.description": "Sanoq sistemalari bilan ishlash uchun dasturlash misollari va kod parchalar.",
-
     "about.title": "Tətbiq haqqında",
     "about.description": "Ushbu ilova sanoq sistemalari bilan ishlash uchun mo‘ljallangan. Agar siz talaba, dasturchi yoki shunchaki raqamlar olamiga qiziquvchi bo‘lsangiz — bu ilova siz uchun foydali qo‘llanma bo‘la oladi. Ilova orqali siz turli sanoq sistemalari bo‘yicha bilim olishingiz, hisob-kitob qilishingiz va kerakli konvertatsiyalarni bajarishingiz mumkin.",
     "about.page.conversion.desription": "Bu bölmə vasitəsilə siz 2-dən 36-ya qədər istənilən say sistemindən digərinə ədədləri asan və dəqiq çevirə bilərsiniz. Yalnız tam ədədlər deyil, həm də kəsrlər və mənfi qiymətlər dəstəklənir. Çevirilmə prosesi yalnız nəticə vermir, hər bir addımı aydın şəkildə izah edir və bu, prosesin məntiqini öyrənməyə imkan yaradır. Nəticələr dəqiq və etibarlıdır, onları təhsil, proqramlaşdırma, riyaziyyat və gündəlik hesablama işlərində istifadə edə bilərsiniz. Rahat interfeys və izahatlar vasitəsilə siz mürəkkəb çevirmələri əzbərləmək əvəzinə, onları real vaxt rejimində başa düşüb tətbiq edə bilərsiniz.",

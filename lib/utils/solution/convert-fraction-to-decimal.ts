@@ -20,23 +20,36 @@ function findNonRepeatingLength(denominator: bigint): number {
     return Math.max(count2, count5);
 }
 
-function getPeriodikValue(numerator: bigint, denominator: bigint, period: Period): string {
-    if (period.isPeriod === false) {
-        return math.fraction(numerator, denominator).toString().slice(1);
-    } else if (period.length < 15) {
-        const noPeriod = findNonRepeatingLength(denominator);
-
-        const frac = math.fraction(numerator, denominator);
-        const decimalStr = math.number(frac).toFixed(noPeriod + period.length);
-
-        const nonPeriodPart = decimalStr.slice(1, noPeriod + 2);
-        const periodPart = decimalStr.slice(noPeriod + 2, noPeriod + 2 + period.length);
-
-        return `${nonPeriodPart}(${periodPart})`;
-    } else {
-        const frac = math.fraction(numerator, denominator);
-        return math.number(frac).toFixed(10).slice(1);
+function longDivisionDigits(numerator: bigint, denominator: bigint, count: number): string {
+    let rem = numerator % denominator;
+    let digits = "";
+    for (let i = 0; i < count; i++) {
+        rem *= 10n;
+        digits += (rem / denominator).toString();
+        rem %= denominator;
+        if (rem === 0n) break;
     }
+    return digits;
+}
+
+function getPeriodikValue(numerator: bigint, denominator: bigint, period: Period): string {
+    if (numerator === 0n) return ".0";
+
+    if (period.isPeriod === false) {
+        const s = math.fraction(numerator, denominator).toString();
+        const dot = s.indexOf(".");
+        return dot === -1 ? ".0" : s.slice(dot);
+    }
+
+    if (period.length < 15) {
+        const noPeriod = findNonRepeatingLength(denominator);
+        const digits = longDivisionDigits(numerator, denominator, noPeriod + period.length);
+        const nonPeriodPart = digits.slice(0, noPeriod);
+        const periodPart = digits.slice(noPeriod, noPeriod + period.length);
+        return `.${nonPeriodPart}(${periodPart})`;
+    }
+
+    return "." + longDivisionDigits(numerator, denominator, 10);
 }
 
 function removeFactors(n: bigint, factor: bigint): bigint {
@@ -68,6 +81,10 @@ function findRepeatingDecimalPeriod(denominator: bigint): Period {
  * @param base - sanoq sistemasi
  */
 export function convertFractionToDecimal(fraction: string, base: number): FractionalPart {
+    if (!fraction) {
+        return { numerator: 0n, denominator: 1n, period: { isPeriod: false }, value: "", exact: true };
+    }
+
     const bigBase = BigInt(base);
     const bigLen = BigInt(fraction.length);
 

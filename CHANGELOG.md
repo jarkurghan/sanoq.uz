@@ -2,6 +2,14 @@
 
 Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
+### v1.4.0 — 2026-08-07
+
+**Tuzatildi:**
+- konvertatsiya tushuntirishidagi xatolar tuzatildi
+
+**Yangi:**
+- Barcha tillar konvertatsiya tushuntiriladi
+
 ### v1.3.0 — 2025-09-05
 
 **Yangi:**

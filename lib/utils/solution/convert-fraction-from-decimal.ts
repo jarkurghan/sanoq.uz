@@ -9,15 +9,22 @@ export function convertFractionFromDecimal(fraction: FractionalPart, base: numbe
     const denominator = BigInt(fraction.denominator);
     const bigBase = BigInt(base);
 
-    const seen = new Map();
+    if (numerator === 0n || denominator === 0n) {
+        return { period: { isPeriod: false }, value: ".0", steps: [], exact: true };
+    }
+
+    const seen = new Map<bigint, number>();
     let remainder = numerator % denominator;
     let result = "";
+    let terminated = false;
 
     const steps: { denominator: number; numerator: number; result: number; remainder: number; multiplicand: number }[] = [];
     const denominatorNumber = Number(denominator);
 
     while (!seen.has(remainder)) {
-        if (result.length >= MAX_STACK_LIMIT) return { period: { isPeriod: null }, value: "." + result.slice(0, 15), steps: steps.slice(0, 15), exact: false };
+        if (result.length >= MAX_STACK_LIMIT) {
+            return { period: { isPeriod: null }, value: "." + result.slice(0, 15), steps: steps.slice(0, 15), exact: false };
+        }
 
         const digit = (remainder * bigBase) / denominator;
         result += DIGITS[Number(digit)];
@@ -32,19 +39,25 @@ export function convertFractionFromDecimal(fraction: FractionalPart, base: numbe
             multiplicand: base,
         });
 
-        if (newRemainder === 0n) break;
+        if (newRemainder === 0n) {
+            terminated = true;
+            break;
+        }
 
         remainder = newRemainder;
     }
 
-    const firstIndex = seen.get(remainder);
+    if (terminated) {
+        return { period: { isPeriod: false }, value: "." + result, steps, exact: true };
+    }
+
+    const firstIndex = seen.get(remainder)!;
     const periodLength = result.length - firstIndex + 1;
     const value = `.${result.slice(0, firstIndex - 1)}(${result.slice(firstIndex - 1)})`;
 
-    if (periodLength > 15)
+    if (periodLength > 15) {
         return { period: { isPeriod: true, length: periodLength }, value: `.${result.slice(0, 15)}`, steps: steps.slice(0, 15), exact: false };
-
-    if (periodLength === 1) return { period: { isPeriod: false }, value: "." + result, steps, exact: true };
+    }
 
     return { period: { isPeriod: true, length: periodLength }, value, steps, exact: true };
 }

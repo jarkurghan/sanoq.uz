@@ -4,17 +4,14 @@
     "nav.calculator": "Hesap Makinesi",
     "nav.code": "Kod",
     "nav.about": "Uygulama Hakkında",
-
     "home.from": "Hangi sayı sisteminden",
     "home.to": "Hangi sayı sistemine",
     "home.input": "Sayı girin",
     "home.result": "Sonuç",
     "home.swap": "Değiştir",
-
     "home.seo.title": "Sayı sistemleri dönüştürücü",
     "home.seo.description": "Sayıları bir sayı sisteminden diğerine kolay ve doğru bir şekilde dönüştürün. Tam sayılar, kesirli sayılar ve negatif değerler desteklenir. Dönüştürme süreci adım adım açıklanır.",
     "home.seo.keywords": "sayı sistemleri, sayı sistemi dönüştürücü, taban dönüştürme, sayıları tabanlar arasında dönüştürme, sayısal dönüştürücü, matematiksel dönüşüm, çevrimiçi hesap makinesi, 2’den 36’ya kadar sayı sistemi",
-
     "numbersystem.binary": "İkilik sayı sistemi (taban 2)",
     "numbersystem.octal": "Sekizlik sayı sistemi (taban 8)",
     "numbersystem.decimal": "Onluk sayı sistemi (taban 10)",
@@ -50,15 +47,12 @@
     "numbersystem.tetratrigesimal": "Otuz dörtlük sayı sistemi (taban 34)",
     "numbersystem.pentatrigesimal": "Otuz beşlik sayı sistemi (taban 35)",
     "numbersystem.hexatrigesimal": "Otuz altılık sayı sistemi (taban 36)",
-
     "article.search": "Ara",
     "article.learnmore": "Oku",
     "article.notfound": "Arama sonucuna göre herhangi bir konu bulunamadı.",
-
     "article.seo.title": "Makaleler — Sayı sistemleri üzerine makaleleri okuyun ve öğrenin",
     "article.seo.description": "Sayı sistemleri hakkında ilginç ve faydalı makaleler keşfedin. İkilik, onluk ve onaltılık sistemler hakkında açık ve anlaşılır bilgiler edinin. Tarihsel bilgiler, uygulamalı örnekler ve programlamadaki kullanımları ile tanışın.",
     "article.seo.keywords": "sayı sistemleri, makaleler, onluk sistem, ikilik sistem, onaltılık sistem, matematik, sayılar, pozisyonel sistem, sayıların tarihi, hesaplama",
-
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
@@ -119,7 +113,7 @@
     "calculator.info.title.5": "Beshlik sanoq sistemasi",
     "calculator.info.title.6": "Oltilik sanoq sistemasi",
     "calculator.info.title.7": "Yettilik sanoq sistemasi",
-    "calculator.info.title.9": "Ikkilik sanoq sistemasi",
+    "calculator.info.title.9": "To'qqizlik sanoq sistemasi",
     "calculator.info.title.11": "O'n birlik sanoq sistemasi",
     "calculator.info.title.12": "O'n ikkilik sanoq sistemasi",
     "calculator.info.title.13": "O'n uchlik sanoq sistemasi",

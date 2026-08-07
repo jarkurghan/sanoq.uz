@@ -4,17 +4,14 @@
     "nav.calculator": "Kalkulýator",
     "nav.code": "Kod",
     "nav.about": "Goşmaça barada",
-
     "home.from": "Haýsy sanok ulgamyndan",
     "home.to": "Haýsy sanok ulgamyna",
     "home.input": "Sany giriziň",
     "home.result": "Netije",
     "home.swap": "Çalyşmak",
-
     "home.seo.title": "Sanok ulgamlary çalşyryjy",
     "home.seo.description": "Sanlary bir sanok ulgamyndan beýlekisine aňsat we takyk geçirip bilersiňiz. Tutuş sanlar, kesir sanlar we otrisatel (minus) bahalar goldanylýar. Geçiriş prosesi ädimme-ädim düşündirilýär.",
     "home.seo.keywords": "sanok ulgamlary, sanok ulgamy çalşyryjy, esas çalşyryş, sanlary ulgamlaryň arasynda geçirmek, san çalşyryjy, matematik çalşyryş, onlaýn kalkulýator, 2-den 36-a çenli sanok ulgamy",
-
     "numbersystem.binary": "Ikilik sanok ulgamy (esas 2)",
     "numbersystem.octal": "Sekizlik sanok ulgamy (esas 8)",
     "numbersystem.decimal": "Onluk sanok ulgamy (esas 10)",
@@ -50,15 +47,12 @@
     "numbersystem.tetratrigesimal": "Otuz dörtlük sanok ulgamy (esas 34)",
     "numbersystem.pentatrigesimal": "Otuz bäşlik sanok ulgamy (esas 35)",
     "numbersystem.hexatrigesimal": "Otuz altylyk sanok ulgamy (esas 36)",
-
     "article.search": "Gözle",
     "article.learnmore": "Oku",
     "article.notfound": "Gözleg boýunça hiç hili mowzuk tapylmady.",
-
     "article.seo.title": "Makalalar — San sistemleri boýunça makalalary okaň we öwreniň",
     "article.seo.description": "San sistemleri barada gyzykly we peýdaly makalalar bilen tanyşyň. Iki sanly, on sanly we on alty sanly sistemler barada düşnükli we aňsat maglumat alyň. Taryhy maglumatlar, amaly mysallar we programmirleýişdäki ulanylyşy bilen tanyşyň.",
     "article.seo.keywords": "san sistemleri, makalalar, onluk sistem, ikilik sistem, on altylyk sistem, matematika, sanlar, pozision sistem, sanlaryň taryhy, hasaplama",
-
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
@@ -119,7 +113,7 @@
     "calculator.info.title.5": "Beshlik sanoq sistemasi",
     "calculator.info.title.6": "Oltilik sanoq sistemasi",
     "calculator.info.title.7": "Yettilik sanoq sistemasi",
-    "calculator.info.title.9": "Ikkilik sanoq sistemasi",
+    "calculator.info.title.9": "To'qqizlik sanoq sistemasi",
     "calculator.info.title.11": "O'n birlik sanoq sistemasi",
     "calculator.info.title.12": "O'n ikkilik sanoq sistemasi",
     "calculator.info.title.13": "O'n uchlik sanoq sistemasi",

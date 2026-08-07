@@ -4,17 +4,14 @@
     "nav.calculator": "Калькулятор",
     "nav.code": "Код",
     "nav.about": "Ҡушымта тураһында",
-
     "home.from": "Ҡайһы һанау системаһынан",
     "home.to": "Ҡайһы һанау системаһына",
     "home.input": "Һанды индерегеҙ",
     "home.result": "Нәтижә",
     "home.swap": "Алмаштырыу",
-
     "home.seo.title": "Һанау системалары конверторы",
     "home.seo.description": "Һандарҙы бер һанау системаһынан икенсеһенә еңел һәм төгәл әйләндерегеҙ. Бөтөн һандар, өлөштәр һәм кире ҡиммәттәр тулыһынса ярҙамлана. Әйләндереү процессы аҙымлап аңлатыла.",
     "home.seo.keywords": "һанау системалары, һан ау системаһы конверторы, нигеҙ әйләндереү, һандарҙы системалар араһында әйләндереү, һанлы конвертор, математик әйләндереү, онлайн калькулятор, 2-нән 36-ға тиклем һан ау системаһы",
-
     "numbersystem.binary": "Икелек иҫәп системаһы (нигеҙ 2)",
     "numbersystem.octal": "Һигеҙлек иҫәп системаһы (нигеҙ 8)",
     "numbersystem.decimal": "Унлыҡ иҫәп системаһы (нигеҙ 10)",
@@ -50,15 +47,12 @@
     "numbersystem.tetratrigesimal": "Утыҙ дүртлек иҫәп системаһы (нигеҙ 34)",
     "numbersystem.pentatrigesimal": "Утыҙ бишлек иҫәп системаһы (нигеҙ 35)",
     "numbersystem.hexatrigesimal": "Утыҙ алтылыҡ иҫәп системаһы (нигеҙ 36)",
-
     "article.search": "Эҙләү",
     "article.learnmore": "Уҡыу",
     "article.notfound": "Эҙләү буйынса бер ниндәй ҙә тема табылманы.",
-
     "article.seo.title": "Мәҡәләләр — Һанау системалары темаһындағы мәҡәләләрҙе уҡып өйрәнегеҙ",
     "article.seo.description": "Һанау системалары тураһында ҡыҙыҡлы һәм файҙалы мәҡәләләрҙе табығыҙ. Икелете, унлыҡ һәм ун алтылыҡ системалар тураһында аңлайышлы мәғлүмәт алығыҙ. Тарихи мәғлүмәттәр, практик миҫалдар һәм программалауҙа ҡулланылышы менән танышығыҙ.",
     "article.seo.keywords": "һанау системалары, мәҡәләләр, унлыҡ система, икелете система, ун алтылыҡ система, математика, һандар, позицион система, һандар тарихы, иҫәпләү",
-
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
@@ -119,7 +113,7 @@
     "calculator.info.title.5": "Beshlik sanoq sistemasi",
     "calculator.info.title.6": "Oltilik sanoq sistemasi",
     "calculator.info.title.7": "Yettilik sanoq sistemasi",
-    "calculator.info.title.9": "Ikkilik sanoq sistemasi",
+    "calculator.info.title.9": "To'qqizlik sanoq sistemasi",
     "calculator.info.title.11": "O'n birlik sanoq sistemasi",
     "calculator.info.title.12": "O'n ikkilik sanoq sistemasi",
     "calculator.info.title.13": "O'n uchlik sanoq sistemasi",

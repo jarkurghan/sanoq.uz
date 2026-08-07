@@ -4,17 +4,14 @@
     "nav.calculator": "Kalkulyator",
     "nav.code": "Kod",
     "nav.about": "Ilova haqida",
-
     "home.from": "Qaysi sanoq sistemasidan",
     "home.to": "Qaysi sanoq sistemasiga",
     "home.input": "Sonni kiriting",
     "home.result": "Natija",
     "home.swap": "Almashtirish",
-
     "home.seo.title": "Sanoq sistemalari konvertori",
     "home.seo.description": "Istalgan sanoq sistemasidan boshqa biriga sonlarni oson va aniq o‘tkazing. Butun sonlar, kasr sonlar va manfiy qiymatlar qo‘llab-quvvatlanadi. Konversiya jarayoni izohli tushuntiriladi.",
     "home.seo.keywords": "sanoq sistemalari, sanoq sistemasi konvertori, sanoq sistemasi aylantirish, sanoq sistemasini o‘zgartirish, raqam konvertori, matematik konvertatsiya, onlayn kalkulyator, 2 dan 36 gacha sanoq sistemasi",
-
     "numbersystem.binary": "Ikkilik (2-asos)",
     "numbersystem.octal": "Sakkizlik (8-asos)",
     "numbersystem.decimal": "O'nlik (10-asos)",
@@ -50,15 +47,12 @@
     "numbersystem.tetratrigesimal": "O'ttiz to'rtlik (34-asos)",
     "numbersystem.pentatrigesimal": "O'ttiz beshlik (35-asos)",
     "numbersystem.hexatrigesimal": "O'ttiz oltilik (36-asos)",
-
     "article.search": "Qidirish...",
     "article.learnmore": "O‘qish",
     "article.notfound": "Qidiruv bo‘yicha hech qanday mavzu topilmadi.",
-
     "article.seo.title": "Maqolalar — Sanoq sistemalari mavzusidagi maqolalarni o‘qing va o‘rganing",
     "article.seo.description": "Sanoq sistemalari haqida qiziqarli va foydali maqolalarni toping. Ikkilik, o‘nlik va o‘n oltilik tizimlar haqida sodda va tushunarli ma’lumotlar oling. Tarixiy ma’lumotlar, amaliy misollar va dasturlashdagi qo‘llanilishi bilan tanishing.",
     "article.seo.keywords": "sanoq sistemalari, maqolalar, o‘nlik sistema, ikkilik sistema, o‘n oltilik sanoq, matematika, raqamlar, pozitsion sistema, raqamlar tarixi, hisoblash",
-
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
@@ -75,7 +69,6 @@
     "calculator.type.standard": "Standart",
     "calculator.type.advanced": "Ilg'or",
     "calculator.type.logical": "Mantiqiy",
-
     "calculator.info.description.10": "bu insonlar tomonidan tabiiy foydalaniladigan, 10 ta raqamga asoslangan pozitsion sanoq sistemasi. Ko‘pchilik kalkulyatorlar, foydalanuvchi interfeyslari va matematikaning barcha sohalarida ishlatiladi",
     "calculator.info.description.2": "bu 2 ta raqamga asoslangan pozitsion sanoq sistemasi. Kompyuterlarning asosiy ishlash prinsipi shu sanoq sistemasiga asoslangan: xotira, protsessor, fayllar, elektr signallar va hokazo",
     "calculator.info.description.8": "bu 8 ta raqamga asoslangan pozitsion sanoq sistemasi. Ba'zi joylarda ishlatiladi",
@@ -111,7 +104,6 @@
     "calculator.info.description.34": "bu 34 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
     "calculator.info.description.35": "bu 35 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
     "calculator.info.description.36": "bu 36 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-
     "calculator.info.title.10": "O'nlik sanoq sistemasi",
     "calculator.info.title.2": "Ikkilik sanoq sistemasi",
     "calculator.info.title.8": "Sakkizlik sanoq sistemasi",
@@ -121,7 +113,7 @@
     "calculator.info.title.5": "Beshlik sanoq sistemasi",
     "calculator.info.title.6": "Oltilik sanoq sistemasi",
     "calculator.info.title.7": "Yettilik sanoq sistemasi",
-    "calculator.info.title.9": "Ikkilik sanoq sistemasi",
+    "calculator.info.title.9": "To'qqizlik sanoq sistemasi",
     "calculator.info.title.11": "O'n birlik sanoq sistemasi",
     "calculator.info.title.12": "O'n ikkilik sanoq sistemasi",
     "calculator.info.title.13": "O'n uchlik sanoq sistemasi",
@@ -147,7 +139,6 @@
     "calculator.info.title.34": "O'ttiz to'rtlik sanoq sistemasi",
     "calculator.info.title.35": "O'ttiz beshlik sanoq sistemasi",
     "calculator.info.title.36": "O'ttiz oltilik sanoq sistemasi",
-
     "calculator.info.digits.10": "O'nlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0",
     "calculator.info.digits.2": "Ikkilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 0",
     "calculator.info.digits.8": "Sakkizlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 0",
@@ -211,7 +202,6 @@
     "calculator.info.warning.34": "O'ttiz to'rtlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz to'rtlik sanoq sistemasi bo'yicha bajaradi",
     "calculator.info.warning.35": "O'ttiz beshlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz beshlik sanoq sistemasi bo'yicha bajaradi",
     "calculator.info.warning.36": "O'ttiz oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz oltilik sanoq sistemasi bo'yicha bajaradi",
-
     "calculator.seo.title.2": "Ikkilik sanoq sistemasi kalkulyatori — arifmetik va ilmiy amallar",
     "calculator.seo.description.2": "Onlayn ikkilik sanoq sistemasi kalkulyatori yordamida 0 va 1 raqamlari bilan barcha arifmetik amallarni — qo‘shish, ayirish, ko‘paytirish, bo‘lish — to‘g‘ridan-to‘g‘ri ikkilik tizimda bajaring. Dasturlash, elektronika, kompyuter fanlari va ta’lim uchun qulay vosita.",
     "calculator.seo.keywords.2": "ikkilik sanoq sistemasi, binary kalkulyator, ikkilik tizim kalkulyatori, ikkilik hisoblash, 0 va 1 kalkulyator, binary arithmetic, onlayn ikkilik kalkulyator, kompyuter fanlari kalkulyator, elektronika hisoblash, dasturchilar uchun kalkulyator",
@@ -317,10 +307,8 @@
     "calculator.seo.title.36": "O'ttiz oltilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
     "calculator.seo.description.36": "Onlayn 36-lik (base 36) sanoq tizimi kalkulyatori yordamida barcha arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
     "calculator.seo.keywords.36": "36-lik sanoq sistemi, base 36 kalkulyator, 36-lik arifmetika, onlayn base 36 kalkulyator, dasturchilar uchun kalkulyator",
-
     "code.title": "Sanoq Sistemalari Kodi",
     "code.description": "Sanoq sistemalari bilan ishlash uchun dasturlash misollari va kod parchalar.",
-
     "about.title": "Ilova haqida",
     "about.description": "Ushbu ilova sanoq sistemalari bilan ishlash uchun mo‘ljallangan. Agar siz talaba, dasturchi yoki shunchaki raqamlar olamiga qiziquvchi bo‘lsangiz — bu ilova siz uchun foydali qo‘llanma bo‘la oladi. Ilova orqali siz turli sanoq sistemalari bo‘yicha bilim olishingiz, hisob-kitob qilishingiz va kerakli konvertatsiyalarni bajarishingiz mumkin.",
     "about.page.conversion.desription": "Bu bo‘lim orqali siz 2 dan 36 gacha bo‘lgan istalgan sanoq sistemasidan boshqa istalgan sanoq sistemasiga sonlarni oson va aniq tarzda o‘tkazishingiz mumkin. Faqat butun sonlar emas, balki kasr sonlar va manfiy qiymatlar ham to‘liq qo‘llab-quvvatlanadi. Konversiya jarayoni nafaqat natija beradi, balki har bir qadamni tushunarli qilib izohlaydi, shu orqali siz jarayon mantiqini o‘rganishingiz mumkin. Natijalar aniq va ishonchli bo‘lib, siz ta’lim, dasturlash, matematika yoki kundalik hisob-kitoblarda foydalana olasiz. Qulay interfeys va tushuntirishlar. Siz endi murakkab konvertatsiyalarni yodlab qolish o‘rniga, ularni real vaqt rejimida tushunishingiz va amalda qo‘llashingiz mumkin.",
@@ -340,19 +328,15 @@
     "about.contact.description.bold": "Biz bilan bog'laning.",
     "about.contact.description.def": "Sizning fikringiz biz uchun muhim!",
     "about.contact.button": "Bog'lanish",
-
     "footer.rights": "Barcha huquqlar himoyalangan.",
-
     "share.title": "Ulashish",
     "share.description": "Ushbu sahifani do‘stlaringizga ulashing",
     "share.telegram": "Telegram",
     "share.email": "Email",
     "share.copy": "Nusxalash",
     "share.copied": "🎉 Nusxalandi",
-
     "calculator.settings.title": "Kalkulyator sozlamalari",
     "calculator.settings.label": "Sanoq sistemasi",
     "calculator.settings.placeholder": "Tanlang",
-
     "sidebar.topics": "Mavzular"
 }

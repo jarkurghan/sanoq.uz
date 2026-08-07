@@ -19,16 +19,23 @@ import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
 import { Language } from "@/lib/types/language";
 import Solution from "./solution";
 
+const MAX_FRACTIONAL_DIGITS = 10;
+const DEBOUNCE_MS = 500;
+
 export default function HomeComponent({ lang }: { lang: Language }) {
     const t = getTranslation(lang);
-    // to-do: maximum kars qism 10ta;
-    //        yoki sanoq sistemasiga qarab
 
     const [waiting, setWaiting] = useState(false);
     const [leftValue, setLeftValue] = useState("");
     const [rightValue, setRightValue] = useState("");
     const [fromBase, setFromBase] = useState(DEFAULT_NUMBER_SYSTEM);
     const [toBase, setToBase] = useState(DEFAULT_TWICE_NUMBER_SYSTEM);
+
+    const [isHiddenSolution, setIsHiddenSolution] = useState(true);
+    const [solutionLeftValue, setSolutionLeftValue] = useState("");
+    const [solutionFromBase, setSolutionFromBase] = useState(Number(DEFAULT_NUMBER_SYSTEM));
+    const [solutionToBase, setSolutionToBase] = useState(Number(DEFAULT_TWICE_NUMBER_SYSTEM));
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const swapBases = () => {
         setFromBase(toBase);
@@ -37,16 +44,22 @@ export default function HomeComponent({ lang }: { lang: Language }) {
         setRightValue(leftValue);
     };
 
-    const [isHiddenSolution, setIsHiddenSolution] = useState(true);
-    const [solutionLeftValue, setSolutionLeftValue] = useState("");
-    const [solutionFromBase, setSolutionFromBase] = useState(Number(DEFAULT_NUMBER_SYSTEM));
-    const [solutionToBase, setSolutionToBase] = useState(Number(DEFAULT_TWICE_NUMBER_SYSTEM));
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const onLeftChange = (value: string) => {
+        const dot = value.indexOf(".");
+        if (dot !== -1 && value.length - dot - 1 > MAX_FRACTIONAL_DIGITS) {
+            const sign = value.startsWith("-") ? "-" : "";
+            const body = sign ? value.slice(1) : value;
+            const [whole, frac = ""] = body.split(".");
+            setLeftValue(`${sign}${whole}.${frac.slice(0, MAX_FRACTIONAL_DIGITS)}`);
+            return;
+        }
+        setLeftValue(value);
+    };
 
     useEffect(() => {
         setRightValue("");
         setIsHiddenSolution(true);
-        setWaiting(Boolean(leftValue));
+        setWaiting(Boolean(leftValue.trim()));
 
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
@@ -56,7 +69,7 @@ export default function HomeComponent({ lang }: { lang: Language }) {
             setSolutionLeftValue(leftValue);
             setSolutionFromBase(Number(fromBase));
             setSolutionToBase(Number(toBase));
-        }, 3000);
+        }, DEBOUNCE_MS);
 
         return () => {
             if (timeoutRef.current) {
@@ -68,7 +81,6 @@ export default function HomeComponent({ lang }: { lang: Language }) {
     return (
         <Fragment>
             <div className="sm:grid grid-cols-[1fr_auto_1fr] gap-6">
-                {/* From input */}
                 <div className="flex flex-col gap-4">
                     <Select value={fromBase} onValueChange={setFromBase}>
                         <SelectTrigger>
@@ -84,13 +96,12 @@ export default function HomeComponent({ lang }: { lang: Language }) {
                     </Select>
                     <Input
                         value={leftValue}
-                        onChange={(e) => setLeftValue(e.target.value)}
+                        onChange={(e) => onLeftChange(e.target.value)}
                         className="font-mono w-full outline-none"
                         placeholder={t("home.input")}
                     />
                 </div>
 
-                {/* Swap button */}
                 <div className="flex flex-col md:flex-row gap-4 my-4">
                     <div className="flex items-center justify-center md:w-auto md:mx-4">
                         <Button variant="outline" size="icon" onClick={swapBases} disabled className="rounded-full" title={t("home.swap")}>
@@ -100,7 +111,6 @@ export default function HomeComponent({ lang }: { lang: Language }) {
                     </div>
                 </div>
 
-                {/* To input */}
                 <div className="flex flex-col gap-4">
                     <Select value={toBase} onValueChange={setToBase}>
                         <SelectTrigger>

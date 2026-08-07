@@ -4,17 +4,14 @@
     "nav.calculator": "Калькулятор",
     "nav.code": "Код",
     "nav.about": "Тиркеме тууралуу",
-
     "home.from": "Кайсы санак системасынан",
     "home.to": "Кайсы санак системасына",
     "home.input": "Санды киргизиңиз",
     "home.result": "Натыйжа",
     "home.swap": "Алмаштыруу",
-
     "home.seo.title": "Санак системалары конвертери",
     "home.seo.description": "Сандарды бир санак системасынан экинчисине оңой жана так өткөрүңүз. Бүтүн сандар, бөлчөк сандар жана терс маанилер толук колдоого алынат. Өткөрүү процесси кадам-кадам түшүндүрүлөт.",
     "home.seo.keywords": "санак системалары, санак системасы конвертери, негиз айландыруу, сандарды системалар арасында өткөрүү, сандык конвертер, математикалык айландыруу, онлайн калькулятор, 2ден 36га чейинки санак системасы",
-
     "numbersystem.binary": "Экилик санак системасы (негиз 2)",
     "numbersystem.octal": "Сегиздик санак системасы (негиз 8)",
     "numbersystem.decimal": "Ондук санак системасы (негиз 10)",
@@ -50,15 +47,12 @@
     "numbersystem.tetratrigesimal": "Отуз төрттүк санак системасы (негиз 34)",
     "numbersystem.pentatrigesimal": "Отуз бештик санак системасы (негиз 35)",
     "numbersystem.hexatrigesimal": "Отуз алтылык санак системасы (негиз 36)",
-
     "article.search": "Издөө",
     "article.learnmore": "Окуу",
     "article.notfound": "Издөө боюнча эч кандай тема табылган жок.",
-
     "article.seo.title": "Макалалар — Санак системалары боюнча макалаларды окуп, үйрөнүңүз",
     "article.seo.description": "Санак системалары тууралуу кызыктуу жана пайдалуу макалаларды табыңыз. Экилик, ондук жана он алтылык системалар боюнча түшүнүктүү жана жөнөкөй маалымат алыңыз. Тарыхый маалыматтар, практикалык мисалдар жана программалоодогу колдонулушу менен таанышыңыз.",
     "article.seo.keywords": "санак системалары, макалалар, ондук система, экилик система, он алтылык система, математика, сандар, позициялык система, сандардын тарыхы, эсептөө",
-
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
@@ -119,7 +113,7 @@
     "calculator.info.title.5": "Beshlik sanoq sistemasi",
     "calculator.info.title.6": "Oltilik sanoq sistemasi",
     "calculator.info.title.7": "Yettilik sanoq sistemasi",
-    "calculator.info.title.9": "Ikkilik sanoq sistemasi",
+    "calculator.info.title.9": "To'qqizlik sanoq sistemasi",
     "calculator.info.title.11": "O'n birlik sanoq sistemasi",
     "calculator.info.title.12": "O'n ikkilik sanoq sistemasi",
     "calculator.info.title.13": "O'n uchlik sanoq sistemasi",
