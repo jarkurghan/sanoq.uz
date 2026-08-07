@@ -1,118 +1,186 @@
 "use client";
 
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/utils/button";
 import { Base } from "@/lib/types/base";
 
+type CalcState = {
+    display: string;
+    topDisplay: string;
+    firstOperand: string | null;
+    operator: string | null;
+    waitingForSecondOperand: boolean;
+};
+
+const INITIAL_STATE: CalcState = {
+    display: "0",
+    topDisplay: "",
+    firstOperand: null,
+    operator: null,
+    waitingForSecondOperand: false,
+};
+
+const COL_SPAN: Record<number, string> = {
+    1: "col-span-1",
+    2: "col-span-2",
+    3: "col-span-3",
+    4: "col-span-4",
+};
+
+const isResultDisplay = (topDisplay: string) => topDisplay.trimEnd().endsWith("=");
+
+const parseBaseFloat = (input: string, radix: number): number => {
+    const negative = input.startsWith("-");
+    const raw = negative ? input.slice(1) : input;
+    const [intPart, fracPart] = raw.split(".");
+
+    let result = intPart ? parseInt(intPart, radix) : 0;
+    if (Number.isNaN(result)) {
+        throw new Error(`Invalid number '${input}' for base ${radix}`);
+    }
+
+    if (fracPart) {
+        for (let i = 0; i < fracPart.length; i++) {
+            const digit = parseInt(fracPart[i], radix);
+            if (Number.isNaN(digit)) {
+                throw new Error(`Invalid digit '${fracPart[i]}' for base ${radix}`);
+            }
+            result += digit / Math.pow(radix, i + 1);
+        }
+    }
+
+    return negative ? -result : result;
+};
+
+const formatResult = (value: number, radix: number): string => {
+    if (!Number.isFinite(value)) return "Error";
+    return value.toString(radix).toUpperCase();
+};
+
 export default function StandartCalculator({ base }: { base: Base }) {
-    type CalcState = { display: string; topDisplay: string; firstOperand: string | null; operator: string | null; waitingForSecondOperand: boolean };
-    const [state, setState] = useState<CalcState>({ display: "0", topDisplay: "", firstOperand: null, operator: null, waitingForSecondOperand: false });
+    const [state, setState] = useState<CalcState>(INITIAL_STATE);
+    const baseNum = Number.parseInt(base);
 
     const inputDigit = (digit: string) => {
         setState((prev) => {
-            if (prev.topDisplay.endsWith("=")) return { display: digit, topDisplay: "", firstOperand: null, operator: null, waitingForSecondOperand: false };
-            else if (prev.waitingForSecondOperand) return { ...prev, display: digit, waitingForSecondOperand: false };
-            else return { ...prev, display: prev.display === "0" ? digit : prev.display + digit };
+            if (prev.display === "Error" || isResultDisplay(prev.topDisplay)) {
+                return { ...INITIAL_STATE, display: digit };
+            }
+            if (prev.waitingForSecondOperand) {
+                return { ...prev, display: digit, waitingForSecondOperand: false };
+            }
+            return { ...prev, display: prev.display === "0" ? digit : prev.display + digit };
         });
     };
 
     const inputDecimal = () => {
         setState((prev) => {
-            if (prev.waitingForSecondOperand) return { ...prev, display: "0.", waitingForSecondOperand: false };
-            else if (!prev.display.includes(".")) return { ...prev, display: prev.display + "." };
-            else return prev;
+            if (prev.display === "Error" || isResultDisplay(prev.topDisplay)) {
+                return { ...INITIAL_STATE, display: "0." };
+            }
+            if (prev.waitingForSecondOperand) {
+                return { ...prev, display: "0.", waitingForSecondOperand: false };
+            }
+            if (!prev.display.includes(".")) {
+                return { ...prev, display: prev.display + "." };
+            }
+            return prev;
         });
+    };
+
+    const calculate = (firstOperand: string, secondOperand: string, operator: string) => {
+        try {
+            const first = parseBaseFloat(firstOperand, baseNum);
+            const second = parseBaseFloat(secondOperand, baseNum);
+
+            let result: number;
+
+            switch (operator) {
+                case "+":
+                    result = first + second;
+                    break;
+                case "-":
+                    result = first - second;
+                    break;
+                case "*":
+                    result = first * second;
+                    break;
+                case "/":
+                    if (second === 0) return "Error";
+                    result = first / second;
+                    break;
+                default:
+                    return secondOperand;
+            }
+
+            return formatResult(result, baseNum);
+        } catch {
+            return "Error";
+        }
     };
 
     const performOperation = (nextOperator: string) => {
         setState((prev) => {
             const { firstOperand, display, operator } = prev;
-            if (firstOperand === null) {
-                return { ...prev, firstOperand: display, operator: nextOperator, topDisplay: `${display}${nextOperator}`, waitingForSecondOperand: true };
-            } else if (operator) {
-                const result = calculate(firstOperand, display, operator);
-                const topDisplay = `${result}${nextOperator}`;
-                return { ...prev, display: result, firstOperand: result, operator: nextOperator, topDisplay, waitingForSecondOperand: true };
-            } else return { ...prev, operator: nextOperator, waitingForSecondOperand: true };
-        });
-    };
 
-    const parseBaseFloat = (input: string, base: number): number => {
-        const [intPart, fracPart] = input.split(".");
-        let result = parseInt(intPart, base);
-
-        if (fracPart) {
-            for (let i = 0; i < fracPart.length; i++) {
-                const digit = parseInt(fracPart[i], base);
-                if (isNaN(digit)) {
-                    throw new Error(`Invalid digit '${fracPart[i]}' for base ${base}`);
-                }
-                result += digit / Math.pow(base, i + 1);
+            if (display === "Error") {
+                return { ...INITIAL_STATE, firstOperand: "0", operator: nextOperator, topDisplay: `0${nextOperator}`, waitingForSecondOperand: true };
             }
-        }
 
-        return result;
-    };
+            if (firstOperand === null || isResultDisplay(prev.topDisplay)) {
+                return {
+                    ...prev,
+                    firstOperand: display,
+                    operator: nextOperator,
+                    topDisplay: `${display}${nextOperator}`,
+                    waitingForSecondOperand: true,
+                };
+            }
 
-    const calculate = (firstOperand: string, secondOperand: string, operator: string) => {
-        const first = parseBaseFloat(firstOperand, Number.parseInt(base));
-        const second = parseBaseFloat(secondOperand, Number.parseInt(base));
+            if (operator) {
+                if (prev.waitingForSecondOperand) {
+                    return { ...prev, operator: nextOperator, topDisplay: `${firstOperand}${nextOperator}` };
+                }
+                const result = calculate(firstOperand, display, operator);
+                if (result === "Error") {
+                    return { ...INITIAL_STATE, display: "Error", topDisplay: `${firstOperand}${operator}${display}=` };
+                }
+                return {
+                    ...prev,
+                    display: result,
+                    firstOperand: result,
+                    operator: nextOperator,
+                    topDisplay: `${result}${nextOperator}`,
+                    waitingForSecondOperand: true,
+                };
+            }
 
-        let result: number;
-
-        switch (operator) {
-            case "+":
-                result = first + second;
-                break;
-            case "-":
-                result = first - second;
-                break;
-            case "*":
-                result = first * second;
-                break;
-            case "/":
-                result = first / second;
-                break;
-            case "AND":
-                result = first & second;
-                break;
-            case "OR":
-                result = first | second;
-                break;
-            case "XOR":
-                result = first ^ second;
-                break;
-            case "<<":
-                result = first << second;
-                break;
-            case ">>":
-                result = first >> second;
-                break;
-            default:
-                return secondOperand;
-        }
-
-        return result.toString(Number.parseInt(base)).toUpperCase();
+            return { ...prev, operator: nextOperator, waitingForSecondOperand: true };
+        });
     };
 
     const handleEquals = () => {
         setState((prev) => {
             const { firstOperand, operator, display, topDisplay } = prev;
-            if (!firstOperand || !operator) return prev;
+            if (!firstOperand || !operator || display === "Error") return prev;
 
             const result = calculate(firstOperand, display, operator);
-            return { display: result, topDisplay: topDisplay + display + "=", firstOperand: null, operator: null, waitingForSecondOperand: false };
+            return {
+                display: result,
+                topDisplay: topDisplay + display + "=",
+                firstOperand: null,
+                operator: null,
+                waitingForSecondOperand: false,
+            };
         });
     };
 
     const clearDisplay = () => {
-        setState({ display: "0", topDisplay: "", firstOperand: null, operator: null, waitingForSecondOperand: false });
+        setState(INITIAL_STATE);
     };
 
     const getAvailableDigits = () => {
-        const baseNum = Number.parseInt(base);
-        const digits = [];
+        const digits: string[] = [];
 
         for (let i = 1; i < Math.min(baseNum, 10); i++) {
             digits.push(i.toString());
@@ -129,69 +197,76 @@ export default function StandartCalculator({ base }: { base: Base }) {
 
     const handleDelete = () => {
         setState((prev) => {
-            const { display } = prev;
-            if (display.length > 1) return { ...prev, display: display.slice(0, -1) };
-            else return { ...prev, display: "0" };
+            if (isResultDisplay(prev.topDisplay) || prev.display === "Error") {
+                return INITIAL_STATE;
+            }
+            if (prev.display.length > 1) {
+                const next = prev.display.slice(0, -1);
+                return { ...prev, display: next === "-" ? "0" : next };
+            }
+            return { ...prev, display: "0" };
         });
     };
 
     const handleSignChange = () => {
         setState((prev) => {
             const { display } = prev;
-            if (display === "0") return prev;
-            const baseNum = Number.parseInt(base);
-            const decimalValue = Number.parseInt(display, baseNum);
-            const negatedValue = -decimalValue;
-            return { ...prev, display: negatedValue.toString(baseNum).toUpperCase() };
+            if (display === "0" || display === "Error") return prev;
+            if (display.startsWith("-")) {
+                return { ...prev, display: display.slice(1) };
+            }
+            return { ...prev, display: `-${display}` };
+        });
+    };
+
+    const applyUnary = (compute: (value: number) => number | "Error", formatTop: (display: string) => string) => {
+        setState((prev) => {
+            if (prev.display === "Error") return prev;
+            try {
+                const decimalValue = parseBaseFloat(prev.display, baseNum);
+                const next = compute(decimalValue);
+                if (next === "Error") {
+                    return { ...INITIAL_STATE, display: "Error", topDisplay: formatTop(prev.display) };
+                }
+                return {
+                    ...prev,
+                    topDisplay: formatTop(prev.display),
+                    display: formatResult(next, baseNum),
+                    firstOperand: null,
+                    operator: null,
+                    waitingForSecondOperand: false,
+                };
+            } catch {
+                return { ...INITIAL_STATE, display: "Error" };
+            }
         });
     };
 
     const handleReciprocal = () => {
-        setState((prev) => {
-            const baseNum = Number.parseInt(base);
-            const decimalValue = parseBaseFloat(prev.display, baseNum);
-            if (decimalValue === 0) return prev;
-            const reciprocalValue = 1 / decimalValue;
-            return { ...prev, topDisplay: `1/${prev.display} = `, display: reciprocalValue.toString(baseNum).toUpperCase() };
-        });
+        applyUnary((value) => (value === 0 ? "Error" : 1 / value), (display) => `1/${display}=`);
     };
 
     const handlePercentage = () => {
-        setState((prev) => {
-            const baseNum = Number.parseInt(base);
-            const decimalValue = parseBaseFloat(prev.display, baseNum);
-            const percentValue = decimalValue / 100;
-            return { ...prev, topDisplay: `%${prev.display} = `, display: percentValue.toString(baseNum).toUpperCase() };
-        });
+        applyUnary((value) => value / 100, (display) => `%${display}=`);
     };
 
     const handleSquare = () => {
-        setState((prev) => {
-            const baseNum = Number.parseInt(base);
-            const decimalValue = parseBaseFloat(prev.display, baseNum);
-            const squaredValue = decimalValue * decimalValue;
-            return { ...prev, topDisplay: `${prev.display}² = `, display: squaredValue.toString(baseNum).toUpperCase() };
-        });
+        applyUnary((value) => value * value, (display) => `${display}²=`);
     };
 
     const handleSquareRoot = () => {
-        setState((prev) => {
-            const baseNum = Number.parseInt(base);
-            const decimalValue = parseBaseFloat(prev.display, baseNum);
-            if (decimalValue < 0) return prev;
-            const sqrtValue = Math.sqrt(decimalValue);
-            return { ...prev, topDisplay: `√${prev.display} = `, display: sqrtValue.toString(baseNum).toUpperCase() };
-        });
+        applyUnary((value) => (value < 0 ? "Error" : Math.sqrt(value)), (display) => `√${display}=`);
     };
 
     const digits = getAvailableDigits();
+    const zeroColSpan = COL_SPAN[4 - (baseNum % 4)] ?? "col-span-1";
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             const key = event.key.toUpperCase();
 
             if (digits.includes(key) || key === "0") inputDigit(key);
-            else if (/^[/*-+]$/i.test(key)) performOperation(key);
+            else if (/^[/*\-+]$/.test(key)) performOperation(key);
             else if (key === "=" || key === "ENTER") handleEquals();
             else if (key === "BACKSPACE") handleDelete();
             else if (key === ".") inputDecimal();
@@ -202,7 +277,9 @@ export default function StandartCalculator({ base }: { base: Base }) {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, []);
+        // base (and digits) are fixed for the lifetime of this page route
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [base]);
 
     return (
         <div className="space-y-4">
@@ -218,7 +295,6 @@ export default function StandartCalculator({ base }: { base: Base }) {
                 <Button variant="outline" onClick={() => performOperation("*")} className="text-primary">
                     ×
                 </Button>
-
                 <Button variant="outline" onClick={() => performOperation("-")} className="text-primary">
                     -
                 </Button>
@@ -255,17 +331,17 @@ export default function StandartCalculator({ base }: { base: Base }) {
                         {digit}
                     </Button>
                 ))}
-                {Number.parseInt(base) % 4 === 0 && (
-                    <Button variant="outline" onClick={inputDecimal} className={"col-span-1"}>
-                        {"."}
+                {baseNum % 4 === 0 && (
+                    <Button variant="outline" onClick={inputDecimal} className="col-span-1">
+                        .
                     </Button>
                 )}
-                <Button variant="outline" onClick={() => inputDigit("0")} className={"col-span-" + (4 - (Number.parseInt(base) % 4))}>
-                    {"0"}
+                <Button variant="outline" onClick={() => inputDigit("0")} className={zeroColSpan}>
+                    0
                 </Button>
-                {Number.parseInt(base) % 4 !== 0 && (
-                    <Button variant="outline" onClick={inputDecimal} className={"col-span-1"}>
-                        {"."}
+                {baseNum % 4 !== 0 && (
+                    <Button variant="outline" onClick={inputDecimal} className="col-span-1">
+                        .
                     </Button>
                 )}
             </div>
