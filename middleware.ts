@@ -13,10 +13,6 @@ export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
     const response = NextResponse.next();
 
-    const { payload, setCookies } = buildPayload(request);
-    for (const c of setCookies ?? []) response.cookies.set(c.name, c.value, c.options);
-    void track(payload);
-
     // Pathname language yo'qligini tekshiradi
     const isMissingLanguage = languages.every((language) => !pathname.startsWith(`/${language}/`) && pathname !== `/${language}`);
 
@@ -30,6 +26,11 @@ export function middleware(request: NextRequest) {
             secure: process.env.NODE_ENV === "production",
             sameSite: "lax",
         });
+
+        const { payload, setCookies } = buildPayload(request);
+        for (const c of setCookies ?? []) response.cookies.set(c.name, c.value, c.options);
+        void track(payload);
+
         return response;
     }
 
