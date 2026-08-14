@@ -19,6 +19,6 @@
     },
     "iconLibrary": "lucide",
     "commands": {
-        "add": "npm install"
+        "add": "bun add"
     }
 }
