@@ -1,12 +1,20 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import type { NextFetchEvent, NextRequest } from "next/server";
+import { track, buildPayload } from "tashrif";
 import { Language } from "./lib/types/language";
 import { LANGUAGES } from "./lib/constants/languages";
 
 const languages: Language[] = LANGUAGES.map((lang) => lang.code);
 const defaultLang: Language = "uz";
 
-export function middleware(request: NextRequest) {
+function withTashrif(request: NextRequest, response: NextResponse, event: NextFetchEvent, shouldTrack = true) {
+    const { payload, setCookies } = buildPayload(request);
+    for (const c of setCookies ?? []) response.cookies.set(c.name, c.value, c.options);
+    if (shouldTrack) event.waitUntil(track(payload));
+    return response;
+}
+
+export function middleware(request: NextRequest, event: NextFetchEvent) {
     const pathname = request.nextUrl.pathname;
     const response = NextResponse.next();
 
@@ -24,7 +32,7 @@ export function middleware(request: NextRequest) {
             sameSite: "lax",
         });
 
-        return response;
+        return withTashrif(request, response, event);
     }
 
     // Agar language yo'q bo'lsa, redirect qilish
@@ -34,16 +42,18 @@ export function middleware(request: NextRequest) {
         // 1. cookie
         const cookieLang = request.cookies.get("language")?.value as Language;
         if (cookieLang && languages.includes(cookieLang as Language)) {
-            return NextResponse.redirect(new URL(`/${cookieLang}${pathname}`, request.url));
+            return withTashrif(request, NextResponse.redirect(new URL(`/${cookieLang}${pathname}`, request.url)), event, false);
         }
 
         // 2. foydalanuvchining afzal tili: Accept-Language header orqali
         const acceptLanguage = request.headers.get("accept-language");
         const supportedLang = languages.find((l) => acceptLanguage?.includes(l));
-        if (supportedLang) return NextResponse.redirect(new URL(`/${supportedLang}${pathname}`, request.url));
+        if (supportedLang) {
+            return withTashrif(request, NextResponse.redirect(new URL(`/${supportedLang}${pathname}`, request.url)), event, false);
+        }
 
         // 3. default o'zbek tili
-        return NextResponse.redirect(new URL(`/${defaultLang}${pathname}`, request.url));
+        return withTashrif(request, NextResponse.redirect(new URL(`/${defaultLang}${pathname}`, request.url)), event, false);
     }
 }
 
