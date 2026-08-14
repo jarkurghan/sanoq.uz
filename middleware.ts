@@ -2,14 +2,11 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { Language } from "./lib/types/language";
 import { LANGUAGES } from "./lib/constants/languages";
-import { track, buildPayload } from "tashrif";
 
 const languages: Language[] = LANGUAGES.map((lang) => lang.code);
 const defaultLang: Language = "uz";
 
 export function middleware(request: NextRequest) {
-    const ip = request.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
-
     const pathname = request.nextUrl.pathname;
     const response = NextResponse.next();
 
@@ -26,10 +23,6 @@ export function middleware(request: NextRequest) {
             secure: process.env.NODE_ENV === "production",
             sameSite: "lax",
         });
-
-        const { payload, setCookies } = buildPayload(request);
-        for (const c of setCookies ?? []) response.cookies.set(c.name, c.value, c.options);
-        void track(payload);
 
         return response;
     }
