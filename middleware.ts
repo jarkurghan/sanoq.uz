@@ -13,13 +13,9 @@ export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
     const response = NextResponse.next();
 
-    try {
-        const { payload, setCookies } = buildPayload(request);
-        for (const c of setCookies ?? []) response.cookies.set(c.name, c.value, c.options);
-        void track(payload);
-    } catch (error) {
-        console.error(error);
-    }
+    const { payload, setCookies } = buildPayload(request);
+    for (const c of setCookies ?? []) response.cookies.set(c.name, c.value, c.options);
+    void track(payload);
 
     // Pathname language yo'qligini tekshiradi
     const isMissingLanguage = languages.every((language) => !pathname.startsWith(`/${language}/`) && pathname !== `/${language}`);
