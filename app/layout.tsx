@@ -18,7 +18,7 @@ export default function Layout({ children }: Props) {
                 <link rel="icon" href="/favicon.ico" sizes="any" />
             </head>
             <body className={inter.className}>
-                <Tashrif />
+                <Tashrif clientId={process.env.NEXT_PUBLIC_TASHRIF_CLIENT_ID} />
                 <ThemeProvider>{children}</ThemeProvider>
             </body>
         </html>
