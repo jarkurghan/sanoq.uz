@@ -1,6 +1,7 @@
 import type React from "react";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/contexts/theme-context";
+import { Tashrif } from "tashrif/react";
 import "@/styles/globals.scss";
 import "@/styles/h.css";
 
@@ -17,6 +18,7 @@ export default function Layout({ children }: Props) {
                 <link rel="icon" href="/favicon.ico" sizes="any" />
             </head>
             <body className={inter.className}>
+                <Tashrif />
                 <ThemeProvider>{children}</ThemeProvider>
             </body>
         </html>
